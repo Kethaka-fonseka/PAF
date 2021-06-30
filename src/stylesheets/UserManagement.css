@@ -1,0 +1,9 @@
+body{
+    background-repeat:no-repeat;
+    background-size: 100%;
+}
+
+#add__new__list{
+    top: -38px;
+    right: 0px;
+}

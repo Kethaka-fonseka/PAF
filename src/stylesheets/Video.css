@@ -1,0 +1,23 @@
+.video-bg{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    z-index: -1005;
+}
+.caption{
+    position: relative;
+}
+.caption h1{
+    font-family:sans-serif;
+    text-transform:uppercase;
+    letter-spacing:5pt;
+    font-size: 60px;
+    line-height:1.6em;
+    font-weight: bolder;
+    color: white;
+    padding-top: 5%;
+
+}
+.video-container{
+    padding-bottom: 100px;
+}
