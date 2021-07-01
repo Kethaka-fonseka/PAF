@@ -33,5 +33,12 @@ const Submission=require("../api/submission.api");
 router.use("/submissions",Submission);
 
 
-//======================================================================
+// IT19053592======================================================================
+
+const Conference=require("../api/conference.api");
+router.use("/conferences",Conference);
+
+const Schedule=require("../api/schedule.api");
+router.use("/schedules",Schedule);
+//=====================================================================================
 module.exports = router;
