@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e4a851c-d203-4733-bb69-e82355c6b896" name="Default Changelist" comment="add test">
+    <list default="true" id="0e4a851c-d203-4733-bb69-e82355c6b896" name="Default Changelist" comment="Login!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Guest Pages/Authentications/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Guest Pages/Authentications/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/AdminNav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/AdminNav.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/admin/AllNav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/AllNav.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/admin/sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/sidebar.js" afterDir="false" />
     </list>
@@ -50,7 +50,7 @@
       <workItem from="1625077677347" duration="168000" />
       <workItem from="1625080969010" duration="72000" />
       <workItem from="1625081074317" duration="52000" />
-      <workItem from="1625134898678" duration="3440000" />
+      <workItem from="1625134898678" duration="6226000" />
     </task>
     <task id="LOCAL-00001" summary="add few new files and folders!!">
       <created>1625075201318</created>
@@ -66,7 +66,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625077784145</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Login!">
+      <created>1625138571568</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1625138571568</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -87,6 +94,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add few new files and folders!!" />
     <MESSAGE value="add test" />
-    <option name="LAST_COMMIT_MESSAGE" value="add test" />
+    <MESSAGE value="Login!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login!" />
   </component>
 </project>

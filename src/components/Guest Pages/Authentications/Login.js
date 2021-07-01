@@ -24,15 +24,15 @@ export default function Login() {
           localStorage.setItem("user", "Admin");
           window.location.href="/"
 
-        } else if (response.data.users.userType == "User") {
+        } else if (response.data.users.userType === "User") {
           localStorage.setItem("user", "user");
           window.location.href="/"
         }
-        else if (response.data.users.userType == "Reviewer") {
+        else if (response.data.users.userType === "Reviewer") {
             localStorage.setItem("user", "Reviewer");
             window.location.href="/"
         }
-        else if (response.data.users.userType == "Editor") {
+        else if (response.data.users.userType === "Editor") {
             localStorage.setItem("user", "Editor");
             window.location.href="/"
         }else {

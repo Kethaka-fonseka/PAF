@@ -6,7 +6,7 @@ import * as FaIcons from "react-icons/fa";
 import * as AiIcons from 'react-icons/ai';
 import * as BsIcons from 'react-icons/bs';
 import { IconContext } from 'react-icons/lib';
-import {SidebarData} from "./sidebar";
+import {data} from "./sidebar";
 import '../../stylesheets/AdminNavBar.css';
 import NavBar from "../Header/NavBar";
 import SubNav from "./SubNav";
@@ -51,7 +51,7 @@ function AdminNav() {
 
                 <Nav className={sideBar ? 'nav-menu active' : 'nav-menu'}>
                     <ul className={"nav-menu-item "}>
-                        {SidebarData.map((item, index)=>{
+                        {data.map((item, index)=>{
                             return (
 
                                     <SubNav item={item} key={index}/>
