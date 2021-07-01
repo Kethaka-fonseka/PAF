@@ -16,8 +16,7 @@
  const app=express();
  const cookieParser = require("cookie-parser");
  var multer = require('multer');
- dotenv.config();
- 
+ dotenv.config()
  //server run in this port 8070
  const PORT = process.env.PORT || 8070;
  
@@ -27,8 +26,8 @@
  app.use(cookieParser());
  app.use(cors(
      { 
-      origin:["http://localhost:3000"],
-      credentials: true,
+        origin:["http://localhost:3000"],
+        credentials: true,
      }
  ));
  
@@ -36,7 +35,10 @@
  
 
 const API=require('./API/api');
-app.use("/api",API);
+app.use("/api", API);
+
+const auth=require("./routes/Authantication/auth");
+app.use("/auth",auth);
 
 
 app.listen(PORT,() =>{

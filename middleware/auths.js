@@ -4,7 +4,9 @@ function auths(req,res,next){
     try{
         const token = req.cookies.token;
         //if use unauthorized person then execute this if statement
-        if(!token) return res.json({errorMessage :"Unauthorized"});
+        if (!token) {
+            return res.json({ errorMessage: "Unauthorized" });
+        }
 
         const verified = jwt.verify(token, process.env.JWT_SECRET);
         req.user = verified.user;

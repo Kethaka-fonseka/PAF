@@ -2,7 +2,7 @@ const express = require("express");
 var router = express.Router();
 const User = require("../../models/userModel");
 const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
+var jwt = require('jsonwebtoken');
 
 //Register
 router.post("/", async (req, res) => {
@@ -49,21 +49,9 @@ router.post("/", async (req, res) => {
     });
 
     const saveUser = await newUser.save();
+    res.status(200).send();
 
-    //sign the token
-    const token = jwt.sign(
-      {
-        user: saveUser._id,
-      },
-      process.env.JWT_SECRET
-    );
-    res
-      .cookie("token", token, {
-        httpOnly: true,
-      })
-      .send();
   } catch (err) {
-    console.log(err);
     res.status(500).send();
   }
 });
@@ -81,7 +69,6 @@ router.post("/login", async (req, res) => {
 
     const existingUser = await User.findOne({ Email });
     if (!existingUser) {
-      console.log(Email, password, "2 eka");
       return res.status(401).json({ errorMessage: "Worng email or password" });
     }
     const passwordCorrect = await bcrypt.compare(
@@ -89,34 +76,28 @@ router.post("/login", async (req, res) => {
       existingUser.passwordHash
     );
     if (!passwordCorrect) {
-      console.log(Email, password, "3 eka");
       return res.status(401).json({ errorMessage: "Worng email or password" });
     }
 
-    //sign the token
-    const token = jwt.sign(
-      {
-        user: existingUser._id,
-      },
-      process.env.JWT_SECRET
-    );
+   
 
-    //send the token in a HTTP-only cookie
 
-    res
-      .cookie("token", token, {
-        httpOnly: true,
-      })
-      .send({
-        users: existingUser,
+    const token = jwt.sign({
+      user: existingUser._id
+    }, process.env.JWT_SECRET);
+
+    res.cookie("token", token, {
+      httpOnly: true,
+    }).send({
+       users: existingUser,
       });
+
   } catch (err) {
-    console.log("Error EKata");
+    console.log(err);
   }
 });
 
 router.get("/logout", async (req, res) => {
-  console.log("Logout working");
   res
     .cookie("token", "", {
       httpOnly: true,
@@ -125,18 +106,5 @@ router.get("/logout", async (req, res) => {
     .send(true);
 });
 
-router.get("/loggedin", (req, res) => {
-  try {
-    const token = req.cookies.token;
-
-    if (!token) return res.json(false);
-
-    jwt.verify(token, process.env.JWT_SECRET);
-    res.send(true);
-  } catch (err) {
-    console.log(err);
-    res.json(false);
-  }
-});
 
 module.exports = router;

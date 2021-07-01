@@ -4,8 +4,9 @@ let path = require("path");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const userModel = require("../../../models/userModel");
-
-router.route("/:id").get(async (req, res) => {
+const auth = require("../../../middleware/auths")
+//Display user details by using ID
+router.route("/:id").get(auth,async (req, res) => {
   const _id = req.params.id;
 
   await userModel
@@ -19,8 +20,8 @@ router.route("/:id").get(async (req, res) => {
       console.log(err);
     });
 });
-
-router.route("/delete/:id").delete((req, res) => {
+//Delete User from the system
+router.route("/delete/:id").delete(auth,(req, res) => {
   const _id = req.params.id;
   userModel
     .findByIdAndDelete(_id)
