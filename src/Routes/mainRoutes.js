@@ -38,7 +38,6 @@ function MainRoutes() {
   return (
     <Router>
       <AllNav />
-      <br />
       <Switch>
         <Route path='/' exact component={Home} />
         <Route path='/keynotes' component={Keynotes} />

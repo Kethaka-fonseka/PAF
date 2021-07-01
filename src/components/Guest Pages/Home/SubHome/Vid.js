@@ -1,9 +1,8 @@
 import React from 'react';
-import BackgroundV from '../../assets/video.mp4'
-import '../../stylesheets/Video.css';
-import Timer from "./Timer";
+import BackgroundV from '../../../../assets/video.mp4'
+import '../../../../stylesheets/Video.css';
+import Timer from "../../../Header/Timer";
 import {Button, Col, Container, Row} from "react-bootstrap";
-import {Box} from "@material-ui/core";
 
 
 

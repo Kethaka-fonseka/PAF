@@ -6,10 +6,13 @@ import Desc from "./SubHome/Desc";
 import Upcoming from "./SubHome/Upcoming";
 import '../../../stylesheets/titles.css';
 import Timer from "../../Header/Timer";
+import Vid from "./SubHome/Vid";
 
 function Home() {
     return (
         <div >
+            <Vid/>
+            <br/><br/><br/>
             <h1 className={"sub-titles text-center"} >ABOUT</h1>
             <hr className="divider"/>
             <br/>

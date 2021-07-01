@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e4a851c-d203-4733-bb69-e82355c6b896" name="Default Changelist" comment="Login working!">
+    <list default="true" id="0e4a851c-d203-4733-bb69-e82355c6b896" name="Default Changelist" comment="Avatar drop down!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/NavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Routes/mainRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes/mainRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Guest Pages/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Guest Pages/Home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Vid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Guest Pages/Home/SubHome/Vid.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +22,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -37,6 +38,11 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2020.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Application Frameworks\Frontend\src\components\Guest Pages\Home\SubHome" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -50,7 +56,7 @@
       <workItem from="1625077677347" duration="168000" />
       <workItem from="1625080969010" duration="72000" />
       <workItem from="1625081074317" duration="52000" />
-      <workItem from="1625134898678" duration="12273000" />
+      <workItem from="1625134898678" duration="12812000" />
     </task>
     <task id="LOCAL-00001" summary="add few new files and folders!!">
       <created>1625075201318</created>
@@ -87,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625144509695</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Avatar drop down!">
+      <created>1625148245837</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1625148245837</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,6 +124,7 @@
     <MESSAGE value="Login!" />
     <MESSAGE value="navigation working!" />
     <MESSAGE value="Login working!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Login working!" />
+    <MESSAGE value="Avatar drop down!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Avatar drop down!" />
   </component>
 </project>
