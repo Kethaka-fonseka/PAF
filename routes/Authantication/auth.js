@@ -79,8 +79,6 @@ router.post("/login", async (req, res) => {
       return res.status(401).json({ errorMessage: "Worng email or password" });
     }
 
-   
-
 
     const token = jwt.sign({
       user: existingUser._id

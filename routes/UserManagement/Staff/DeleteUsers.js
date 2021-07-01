@@ -3,6 +3,7 @@ var router = express.Router();
 let path = require('path');
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
+const User = require('../../../models/userModel')
 const UserManagement=require("../../../models/UserManagementModel");
 const auth = require("../../../middleware/auths")
 
@@ -21,13 +22,17 @@ router.route('/:id').get(auth,async (req, res) => {
 
 });
 //Delete user Details
-router.route('/delete/:id').delete(auth,(req, res) => {
-    const _id = req.params.id;
-     UserManagement.findByIdAndDelete(_id).then((sellers) => {
-
+router.route('/delete').post(auth,(req, res) => {
+    const _id = req.body.id;
+    const Email = req.body.Email;
+     UserManagement.findByIdAndDelete(_id).then(() => {
+        User.remove({Email: Email}).then(()=>{
             res.json({
                 status:"Success"
             })
+        }).catch((err)=>{
+            console.log(err);
+        })
     }).catch((err)=>{
         console.log(err);
     });
