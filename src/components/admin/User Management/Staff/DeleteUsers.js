@@ -52,7 +52,14 @@ handleInputChange = (e) =>{
             axios.delete(`http://localhost:8070/api/deletemanageusers/delete/${id}`)
                 .then(response => {
                     
-                    alert("Deleted")
+                    swal({
+                        title: "Delete",
+                        text: "Succesfully delete the recorde",
+                        icon: "success",
+                        SuccessMode: true,
+                      }).then((success) => {
+                        window.location.href="/admin/staff-management"
+                      });
                       
                 })
                 .catch(function (err) {

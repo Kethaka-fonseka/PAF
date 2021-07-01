@@ -10,13 +10,28 @@ import {SidebarData} from "./sidebar";
 import '../../stylesheets/AdminNavBar.css';
 import NavBar from "../Header/NavBar";
 import SubNav from "./SubNav";
-
+import { useHistory } from "react-router-dom";
+import axios from "axios";
 
 function AdminNav() {
 
     const [sideBar,setSideBar] = useState(false)
-
     const showSideBar = () => setSideBar(!sideBar)
+    const history = useHistory();
+
+    
+  function Logout() {
+ 
+    axios
+      .get("http://localhost:8070/auth/logout")
+      .then((response) => {
+        localStorage.removeItem("user");
+        window.location.href="/"
+       })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 
     return (
         <>
@@ -30,7 +45,7 @@ function AdminNav() {
                    <Nav className={"mr-auto"}>
 
                    </Nav>
-                    <Button className="mr-sm-2" variant={"outline-light btn-1"}  href="/">Log Out</Button>{' '}
+                    <Button type="submit" className="mr-sm-2" variant={"outline-light btn-1"}  onClick={Logout}>Log Out</Button>{' '}
 
                </Navbar>
 

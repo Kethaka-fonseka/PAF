@@ -47,7 +47,16 @@ class DeleteUsers extends Component {
       axios
         .delete(`http://localhost:8070/api/deleteusers/delete/${id}`)
         .then((response) => {
-          alert("Deleted");
+               
+          swal({
+            title: "Delete",
+            text: "Succesfully delete the recorde",
+            icon: "success",
+            SuccessMode: true,
+          }).then((success) => {
+            window.location.href="/admin/user-management"
+          });
+          
         })
         .catch(function (err) {
           console.log(err);

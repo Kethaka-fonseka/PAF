@@ -5,6 +5,8 @@ import "../../../../stylesheets/UserManagement.css";
 import emailjs from "emailjs-com";
 import swal from "sweetalert";
 import Management from "./Management";
+import { Card, Container } from "react-bootstrap";
+import { Paper } from "@material-ui/core";
 
 export default class ViewMoreData extends Component {
   constructor(props) {
@@ -54,8 +56,8 @@ export default class ViewMoreData extends Component {
             text: "Succesfully sent the email",
             icon: "success",
             SuccessMode: true,
-          }).then((willDelete) => {
-            return <Management />;
+          }).then((success) => {
+            window.location.href="/admin/staff-management"
           });
         },
         (error) => {
@@ -66,6 +68,15 @@ export default class ViewMoreData extends Component {
 
   render() {
     return (
+
+      <Container>
+      <Paper elevation={"9"}>
+        <Card className='text-center'>
+          <Card.Header>
+            {" "}
+            <h1 className={"text-center sub-titles mt-2"}>Contact</h1>
+          </Card.Header>
+                  <Card.Body>
       <div>
         <div class='body' align='center' style={{ marginTop: "10px" }}>
           <div
@@ -83,7 +94,6 @@ export default class ViewMoreData extends Component {
               className='sendEmails'
             >
               <center>
-                <h1 style={{ color: "#ff3333" }}>Contact the user</h1>
                 <br />
                 <br />
                 <input
@@ -124,7 +134,7 @@ export default class ViewMoreData extends Component {
                   align='center'
                   class='un '
                   type='submit'
-                  style={{ backgroundColor: "blue", color: "white" }}
+                  style={{ backgroundColor: "#1a53ff", color: "white" }}
                 >
                   Send
                 </button>
@@ -132,7 +142,12 @@ export default class ViewMoreData extends Component {
             </form>
           </div>
         </div>
-      </div>
+              </div>
+              </Card.Body>
+          </Card>
+        </Paper>
+      </Container>
     );
+    
   }
 }

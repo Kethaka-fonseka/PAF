@@ -3,22 +3,28 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "../../../../stylesheets/UserManagement.css";
 
+
 export default class Management extends Component {
   constructor(props) {
     super(props);
-    this.state = { management: [] };
+    this.state = {
+      management: []
+    };
   }
-
   componentDidMount() {
+
+
     axios
       .get("http://localhost:8070/api/usermanagement/display")
       .then((response) => {
-        console.log(response.data);
-        this.setState({ management: response.data });
+
+          this.setState({ management: response.data });
+   
       })
       .catch(function (err) {
         console.log(err);
       });
+    
   }
   render() {
     return (
@@ -42,7 +48,8 @@ export default class Management extends Component {
                   <th scope='col'>User</th>
                   <th scope='col'>User Name</th>
                   <th scope='col'>Role</th>
-                  <th scope='col'>Edit List </th>
+                    <th scope='col'>Edit List </th>
+                    <th scope='col'>Records </th>
                   <th scope='col'>Contact</th>
                 </tr>
               </thead>
@@ -57,7 +64,7 @@ export default class Management extends Component {
                           width: "100px",
                           height: "100px",
                         }}
-                        src={`http://localhost:3000/${item.Identity}`}
+                        src={`http://localhost:3000/user/${item.Identity}`}
                       />
                     </td>
                     <td style={{ paddingTop: "40px" }}>
@@ -80,6 +87,23 @@ export default class Management extends Component {
                         <i class='fa fa-trash'></i> delete
                       </Link>
                     </td>
+
+                    <td>
+                      <Link
+                        style={{ marginTop: "30px" }}
+                        type='button'
+                        class='btn btn-primary position-absolute'
+                        to={`/admin/staffmanagement/view/${item._id}`}
+                      >
+                              <i class='fa fa-folder'></i> View
+                      </Link>
+                      
+                      
+                    </td>
+
+
+
+
                     <td>
                       <Link
                         style={{ marginTop: "30px" }}

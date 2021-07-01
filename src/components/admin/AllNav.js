@@ -4,8 +4,9 @@ import NavBar from "../Header/NavBar";
 
 
 function AllNav() {
-   const role = "admin";
-   if(role ==="admin"){
+    const role = "Admin";
+    const token = localStorage.getItem("user");
+   if(role === token){
        return <AdminNav/>
    }else{
        return <NavBar/>

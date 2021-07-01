@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+import swal from 'sweetalert';
 class EditUsers extends Component {
   constructor(props) {
     super(props);
@@ -60,7 +60,17 @@ class EditUsers extends Component {
 
     axios
       .put(`http://localhost:8070/api/usermanagement/updates/${id}`, data)
-      .then((response) => {})
+      .then((response) => {
+        swal({
+          title: "Success",
+          text: "Succesfully update the details",
+          icon: "success",
+          SuccessMode: true,
+        }).then((success) => {
+          window.location.href="/admin/staff-management"
+        });
+    
+      })
       .catch(function (err) {
         console.log(err);
       });
@@ -77,7 +87,7 @@ class EditUsers extends Component {
               alt='Avatar'
               align='center'
               style={{ borderRadius: "50%", width: "150px", height: "150px" }}
-              src={`http://localhost:3000/data/UserManagement/${this.state.Identity}`}
+              src={`http://localhost:3000/user/${this.state.Identity}`}
             />
 </div>
             <div class='input-group mb-3' style={{ width: "800px" }}>
@@ -215,6 +225,7 @@ class EditUsers extends Component {
                 <option value='Default'>-</option>
                 <option value='Admin'>Admin</option>
                 <option value='Reviewer'>Reviewer</option>
+                <option value='Editor'>Editor</option>
               </select>
             </div>
             <br/><br/><br/>

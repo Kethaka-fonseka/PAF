@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import "../../../stylesheets/Login.css";
-
+import swal from "sweetalert";
+import { Card, Container } from "react-bootstrap";
+import { Divider, Paper } from "@material-ui/core";
 
 export default function Login() {
   const [Email, setEmail] = useState("");
@@ -16,34 +18,38 @@ export default function Login() {
     };
 
     axios
-      .post("http://localhost:8070/api/auth/login", data)
+      .post("http://localhost:8070/auth/login", data)
       .then((response) => {
         if (response.data.users.userType == "Admin") {
-          history.push("/admin/conferencemanagement");
+          localStorage.setItem("user", "Admin");
+          window.location.href="/"
 
         } else if (response.data.users.userType == "User") {
-          history.push("/");
+          localStorage.setItem("user", "user");
+          window.location.href="/"
         } else {
-          history.push("/login");
-        }
-        
-
-        
+          window.location.href="/login"
+        }   
         
        })
       .catch((err) => {
-        // swal("Try again", "Incorrect email or password");
+        swal("Try again", "Incorrect email or password");
 
         console.log(err);
       });
   }
 
   return (
+    <Container align="center" style={{marginTop:'60px'}}>
+
+      <Card style={{ width: '600px' }}>
+      <h1 className={"text-center sub-titles mt-2"}>Signin</h1>
+        <Divider />
+        <Paper elevation={"9"}>
+        <Card.Body>
+     
     <div class='body'>
-      <div class='main'>
-        <p class='sign' align='center'>
-          Sign in
-        </p>
+      <div class='main' style={{marginTop:'60px'}}>
 
         <input
           required
@@ -70,12 +76,13 @@ export default function Login() {
         <button Login class='submit' onClick={Logins} align='center'>
           Sign in
         </button>
-        <p class='forgot' align='center'>
-          <a class='forget' href='/Register'>
-            Register
-          </a>
-        </p>
       </div>
-    </div>
+            </div>
+           
+          </Card.Body>
+          </Paper>
+        </Card>
+     
+    </Container>
   );
 }

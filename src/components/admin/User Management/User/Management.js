@@ -33,6 +33,7 @@ export default class Management extends Component {
                   <th scope='col'>ID</th>
                   <th></th>
                   <th scope='col'>Email</th>
+                  <th scope='col'>User Name</th>
                   <th scope='col'>Remove</th>
                   <th scope='col'>Contact</th>
                 </tr>
@@ -48,6 +49,9 @@ export default class Management extends Component {
                     {item.Email}
                     </td>
                     <td style={{ paddingTop: "30px" }}>
+                    {item.UserName}
+                    </td>
+                    <td >
                     <Link
                     
                         class='btn btn-danger'
@@ -58,7 +62,7 @@ export default class Management extends Component {
                     </td>
                     <td>
                     <Link
-                        style={{ marginTop: "30px" }}
+              
                         class='btn btn'
                         to={`/admin/usermanagement/editmembers/${item._id}`}
                       >
