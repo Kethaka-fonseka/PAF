@@ -32,7 +32,7 @@ class AddSubmission extends Component {
     data.append("role", this.state.role);
     data.append("file", this.state.file);
     axios
-      .post("http://localhost:8080/submission/create", data)
+      .post("http://localhost:8070/api/submissions/create", data)
       .then((res) => {
         alert("data successfully inserted!!!");
       })

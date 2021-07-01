@@ -74,7 +74,7 @@ if(role[0] === token) {
 
     {
       title: "Requests",
-      path: "/admin/requestmanagement",
+      path: "/submissions/pending",
       icon: <FaIcons.FaCartPlus/>,
       cName: "nav-text",
     },

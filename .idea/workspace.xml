@@ -3,9 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="0e4a851c-d203-4733-bb69-e82355c6b896" name="Default Changelist" comment="Avatar drop down!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Routes/mainRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes/mainRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Guest Pages/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Guest Pages/Home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Vid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Guest Pages/Home/SubHome/Vid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/NavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/Add Submission/AddSubmission.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Add Submission/AddSubmission.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/PendingSubmissions/PendingSubmissions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/PendingSubmissions/PendingSubmissions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/ViewSubmission/ViewSubmission.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/ViewSubmission/ViewSubmission.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/sidebar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +62,7 @@
       <workItem from="1625080969010" duration="72000" />
       <workItem from="1625081074317" duration="52000" />
       <workItem from="1625134898678" duration="12812000" />
+      <workItem from="1625148913323" duration="3353000" />
     </task>
     <task id="LOCAL-00001" summary="add few new files and folders!!">
       <created>1625075201318</created>

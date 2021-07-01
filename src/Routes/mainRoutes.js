@@ -26,13 +26,12 @@ import ContactUsers from "../components/admin/User Management/User/Contact";
 import MainConManagement from "../components/admin/Conference Management/Main/MainConManagement";
 import AddUpConference from "../components/admin/Conference Management/Upcoming/AddUpConference";
 import ViewTemplates from "../components/admin/Template Managment/ViewTemplates";
+import AddSubmission from "../components/Users/Add Submission/AddSubmission";
+import PendingSubmissions from "../components/admin/PendingSubmissions/PendingSubmissions";
+import ViewSubmission from "../components/admin/ViewSubmission/ViewSubmission";
 
-{
-  /* <Route exact path="/" component={Home}/>
-<Route  path="/add" component={AddSubmission}/>
-<Route  path="/pending" component={PendingSubmissions}/>
-<Route  path="/:id" component={ViewSubmission}/> */
-}
+
+
 
 function MainRoutes() {
   return (
@@ -102,13 +101,10 @@ function MainRoutes() {
           path='/admin/usermanagement/editmembers/:id'
           component={ContactUsers}
         />
+    <Route  path="/submissions/add" component={AddSubmission}/>
+    <Route  path="/submissions/pending" component={PendingSubmissions}/>
+    <Route  path="/submissions/view/:id" component={ViewSubmission}/>
 
-        {/* <Route exact path="/" component={Home}/>
-    <Route  path="/add" component={AddSubmission}/>
-    <Route  path="/pending" component={PendingSubmissions}/>
-    <Route  path="/:id" component={ViewSubmission}/> */}
-
-        {/*Sandaruwan end*/}
       </Switch>
     </Router>
   );

@@ -10,7 +10,7 @@ class PendingSubmissions extends Component {
   }
   componentDidMount() {
     axios
-      .get("http://localhost:8080/submission")
+      .get("http://localhost:8070/api/submissions")
       .then((res) => {
         this.setState({ submissions: res.data });
       })
@@ -20,7 +20,7 @@ class PendingSubmissions extends Component {
   }
 
   onClick(submissionID) {
-    window.location = `/${submissionID}`;
+    window.location = `/submissions/view/${submissionID}`;
   }
   render() {
     return (

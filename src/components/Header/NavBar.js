@@ -17,6 +17,7 @@ function NavBar() {
 
   const handleClose = () => {
     setAnchorEl(null);
+    window.location="/submissions/add";
   };
 
   function Logout() {

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-import DocViewer from "react-doc-viewer";
+
+
 
 class ViewSubmission extends Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class ViewSubmission extends Component {
 
   componentDidMount() {
     axios
-      .get(`http://localhost:8080/submission/${this.props.match.params.id}`)
+      .get(`http://localhost:8070/api/submissions/${this.props.match.params.id}`)
       .then((res) => {
         this.setState({ submissions: res.data });
       })
@@ -26,7 +27,7 @@ class ViewSubmission extends Component {
   Approve() {
     axios
       .patch(
-        `http://localhost:8080/submission/approve/${this.props.match.params.id}`
+        `http://localhost:8070/api/submissions/approve/${this.props.match.params.id}`
       )
       .then((res) => {
         alert("Submission aprroved for the event");
@@ -39,7 +40,7 @@ class ViewSubmission extends Component {
   Decliend() {
     axios
       .patch(
-        `http://localhost:8080/submission/decline/${this.props.match.params.id}`
+        `http://localhost:8070/api/submissions/decline/${this.props.match.params.id}`
       )
       .then((res) => {
         alert("Submission Declined for the event");
@@ -60,7 +61,7 @@ class ViewSubmission extends Component {
         <div className="mt-3 mb-1">
           <a
             class="btn btn-primary mx-2 rounded"
-            href={`http://localhost:8080/submission/download/${this.props.match.params.id}`}
+            href={`http://localhost:8070/api/submissions/download/${this.props.match.params.id}`}
             download
           >
             Download
