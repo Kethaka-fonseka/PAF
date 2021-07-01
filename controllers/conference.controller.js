@@ -50,23 +50,23 @@ const getClosedConferences = async (req, res) => {
     }
 };
 
-
-const deleteConference = async (req, res) => {
-    if (req.params.id) {
-        try {
-            const conference = await Conference.findById(req.params.id);
-            if (conference.status === upstatus) {
-                conference.status = activatestatus;
-            } else  {
-                conference.status = closedstatus;
-            }
-            const newConference = await conference.save();
-            res.status(200).json(newConference);
-        } catch (error) {
-            res.status(400).json({message:error.message})
-        }
-    }
-};
+//
+// const deleteConference = async (req, res) => {
+//     if (req.params.id) {
+//         try {
+//             const conference = await Conference.findById(req.params.id);
+//             if (conference.status === upstatus) {
+//                 conference.status = activatestatus;
+//             } else  {
+//                 conference.status = closedstatus;
+//             }
+//             const newConference = await conference.save();
+//             res.status(200).json(newConference);
+//         } catch (error) {
+//             res.status(400).json({message:error.message})
+//         }
+//     }
+// };
 
 const ConferenceStatusHandler = async (req, res) => {
     if (req.params.id) {
