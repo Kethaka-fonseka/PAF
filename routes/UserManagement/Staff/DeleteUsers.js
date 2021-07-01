@@ -15,7 +15,7 @@ router.route('/:id').get(auth,async (req, res) => {
             success:true,
             UserManagement
         });
-     
+     //JEMIS
     }).catch((err)=>{
         console.log(err);
     });
