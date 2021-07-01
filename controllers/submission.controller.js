@@ -1,7 +1,6 @@
 const multer = require("multer");
 const Submission = require("../models/submission.model");
 const STATUS = "pending";
-const download = require("download");
 const datatime = new Date();
 const Declined = "declined";
 const Approved = "approved";

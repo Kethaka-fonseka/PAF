@@ -98,7 +98,6 @@ const getConferenceByID=async(req,res)=>{
 
 module.exports ={
     addUpConference,
-    deleteConference,
     getAllUpConferences,
     getMainConferences,
     getClosedConferences,
