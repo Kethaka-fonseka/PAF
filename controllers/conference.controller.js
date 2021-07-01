@@ -1,3 +1,4 @@
+
 const Conference =require('../models/conference.model');
 const Schedule = require('../models/schedule.model');
 const Speakers = require('../models/speaker.model');
@@ -7,12 +8,12 @@ const activateStatus ='main'
 const addUpConference = async (req, res) => {
     if (req.body) {
         const conference = new Conference({
-            con_title: req.body.subject,
+            con_title: req.body.con_title,
             description: req.body.description,
             venue: req.body.venue,
             seats: req.body.seats,
-            status: req.body.status,
-            date: req.file.date,
+            status: upStatus,
+            date: req.body.date,
         });
         try {
             const newConference = await conference.save();
@@ -22,6 +23,28 @@ const addUpConference = async (req, res) => {
         }
     }
 };
+const UpdateConference = async (req, res) => {
+    if (req.body) {
+
+        const conference = new Conference({
+            con_title: req.body.subject,
+            description: req.body.description,
+            venue: req.body.venue,
+            seats: req.body.seats,
+            status: req.body.status,
+            date: req.body.date,
+
+        });
+        try {
+
+            const newConference = await conference.updateOne({_id: req.params._id, conference});
+            res.status(201).json(newConference);
+        } catch (error) {
+            res.status(400).json({message:error.message})
+        }
+    }
+};
+
 
 const getAllUpConferences = async (req, res) => {
     try {
@@ -50,23 +73,22 @@ const getClosedConferences = async (req, res) => {
     }
 };
 
-//
-// const deleteConference = async (req, res) => {
-//     if (req.params.id) {
-//         try {
-//             const conference = await Conference.findById(req.params.id);
-//             if (conference.status === upstatus) {
-//                 conference.status = activatestatus;
-//             } else  {
-//                 conference.status = closedstatus;
-//             }
-//             const newConference = await conference.save();
-//             res.status(200).json(newConference);
-//         } catch (error) {
-//             res.status(400).json({message:error.message})
-//         }
-//     }
-// };
+
+const deleteConference = async (req, res, params) => {
+    if (req.params.id) {
+        try {
+            const conference = await Conference.findByIdAndDelete(req.params.id);
+            const schedule = await Schedule.remove({conference:req.params.id})
+            const speaker = await Speakers.remove({conference:req.params.id})
+            res.status(200).json({
+                status:"Success"
+            });
+
+        } catch (error) {
+            res.status(400).json({message:error.message})
+        }
+    }
+};
 
 const ConferenceStatusHandler = async (req, res) => {
     if (req.params.id) {
@@ -102,6 +124,8 @@ module.exports ={
     getMainConferences,
     getClosedConferences,
     ConferenceStatusHandler,
-    getConferenceByID
+    getConferenceByID,
+    UpdateConference,
+    deleteConference
 
 }
