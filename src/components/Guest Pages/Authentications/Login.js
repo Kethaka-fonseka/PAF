@@ -20,14 +20,22 @@ export default function Login() {
     axios
       .post("http://localhost:8070/auth/login", data)
       .then((response) => {
-        if (response.data.users.userType == "Admin") {
+        if (response.data.users.userType === "Admin") {
           localStorage.setItem("user", "Admin");
           window.location.href="/"
 
         } else if (response.data.users.userType == "User") {
           localStorage.setItem("user", "user");
           window.location.href="/"
-        } else {
+        }
+        else if (response.data.users.userType == "Reviewer") {
+            localStorage.setItem("user", "Reviewer");
+            window.location.href="/"
+        }
+        else if (response.data.users.userType == "Editor") {
+            localStorage.setItem("user", "Editor");
+            window.location.href="/"
+        }else {
           window.location.href="/login"
         }   
         

@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e4a851c-d203-4733-bb69-e82355c6b896" name="Default Changelist" comment="add test" />
+    <list default="true" id="0e4a851c-d203-4733-bb69-e82355c6b896" name="Default Changelist" comment="add test">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Guest Pages/Authentications/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Guest Pages/Authentications/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/AllNav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/AllNav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/sidebar.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,9 +28,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="E:\Application Frameworks\Frontend\node_modules\prettier" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -41,6 +50,7 @@
       <workItem from="1625077677347" duration="168000" />
       <workItem from="1625080969010" duration="72000" />
       <workItem from="1625081074317" duration="52000" />
+      <workItem from="1625134898678" duration="3440000" />
     </task>
     <task id="LOCAL-00001" summary="add few new files and folders!!">
       <created>1625075201318</created>
