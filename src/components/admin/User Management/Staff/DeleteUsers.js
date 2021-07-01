@@ -48,8 +48,12 @@ handleInputChange = (e) =>{
 
         if (this.state.Email == this.state.Emails) {
             const id = this.state.ID;
-    
-            axios.delete(`http://localhost:8070/api/deletemanageusers/delete/${id}`)
+            const Email = this.state.Email;
+            const data = {
+                id,
+                Email
+            }
+            axios.post("http://localhost:8070/api/deletemanageusers/delete",data)
                 .then(response => {
                     
                     swal({
