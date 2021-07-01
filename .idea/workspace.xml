@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e4a851c-d203-4733-bb69-e82355c6b896" name="Default Changelist" comment="Avatar drop down!">
+    <list default="true" id="0e4a851c-d203-4733-bb69-e82355c6b896" name="Default Changelist" comment="donse few changes in project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Routes/mainRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes/mainRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/NavBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Users/Add Submission/AddSubmission.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Add Submission/AddSubmission.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/admin/PendingSubmissions/PendingSubmissions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/PendingSubmissions/PendingSubmissions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/ViewSubmission/ViewSubmission.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/ViewSubmission/ViewSubmission.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/sidebar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +55,7 @@
       <workItem from="1625080969010" duration="72000" />
       <workItem from="1625081074317" duration="52000" />
       <workItem from="1625134898678" duration="12812000" />
-      <workItem from="1625148913323" duration="3353000" />
+      <workItem from="1625148913323" duration="6032000" />
     </task>
     <task id="LOCAL-00001" summary="add few new files and folders!!">
       <created>1625075201318</created>
@@ -106,7 +99,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625148245837</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="donse few changes in project">
+      <created>1625152813747</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1625152813747</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +131,7 @@
     <MESSAGE value="navigation working!" />
     <MESSAGE value="Login working!" />
     <MESSAGE value="Avatar drop down!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Avatar drop down!" />
+    <MESSAGE value="donse few changes in project" />
+    <option name="LAST_COMMIT_MESSAGE" value="donse few changes in project" />
   </component>
 </project>

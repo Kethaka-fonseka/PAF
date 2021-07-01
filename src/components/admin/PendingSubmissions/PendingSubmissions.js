@@ -21,6 +21,7 @@ class PendingSubmissions extends Component {
 
   onClick(submissionID) {
     window.location = `/submissions/view/${submissionID}`;
+    //
   }
   render() {
     return (
