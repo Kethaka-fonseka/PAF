@@ -10,11 +10,15 @@ import axios from "axios";
 import swal from "sweetalert";
 function ConferenceManagement() {
   const [conferences, setConferences] = useState([]);
+  const [main, setMain] = useState([]);
+
+  const [deleted,setDeleted] = useState(false)
+  const [activated,setActivated] = useState(false)
   const [ID, setID] = useState("");
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8070/api/conference/upconferences`)
+      .get(`http://localhost:8070/api/conferences/up`)
       .then((res) => {
         console.log(res);
         setConferences(res.data);
@@ -22,15 +26,12 @@ function ConferenceManagement() {
       .catch((err) => {
         console.log(err);
       });
-  });
+  },[deleted,activated]);
 
-  function deleteConferences(e) {
-    e.preventDefault();
-    const id = 1000;
+  function deleteConferences(id) {
     console.log(id);
-
     axios
-      .delete(`http://localhost:8070/api/deletemanageusers/delete/${id}`)
+      .delete(`http://localhost:8070/api/conferences/${id}`)
       .then((res) => {
         alert("Deleted");
       })
@@ -38,10 +39,28 @@ function ConferenceManagement() {
         alert(err);
       });
   }
-  function checkEligibility() {}
+  function checkEligibility() {
+
+    axios
+        .get(`http://localhost:8070/api/conferences/main`)
+        .then((res) => {
+          console.log(res);
+          setMain(res.data)
+
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+  }
 
   return (
     <Container fluid>
+      {/*{conferences.map((conference,index) =>{*/}
+      {/*  return (*/}
+      {/*      <>*/}
+      {/*      </>*/}
+      {/*  )*/}
+      {/*})}*/}
       <Card className={"p-4"}>
         <h1 className="text-center sub-titles ">Upcoming Events</h1>
         <hr />
@@ -66,12 +85,13 @@ function ConferenceManagement() {
           </thead>
           <tbody>
             {conferences.map((conference, index) => (
+
               <tr className={"text-center"}>
-                <td>{conference.ConferenceTitle}</td>
-                <td>{conference.Description}</td>
-                <td>{conference.Venue}</td>
-                <td>{conference.Date}</td>
-                <td>{conference.Seat}</td>
+                <td>{conference.con_title}</td>
+                <td>{conference.description}</td>
+                <td>{conference.venue}</td>
+                <td>{conference.date}</td>
+                <td>{conference.seats}</td>
                 <td>
                   <Button
                     className={"pl-0 pr-4"}
@@ -79,8 +99,8 @@ function ConferenceManagement() {
                     startIcon={<DeleteIcon />}
                     color="success"
                     size="small"
-                    value={setID(conference._id)}
-                    onClick={deleteConferences}
+
+                    onClick={deleteConferences.bind(conference._id)}
                   >
                     Delete
                   </Button>
@@ -92,7 +112,7 @@ function ConferenceManagement() {
                     color="secondary"
                     startIcon={<CheckIcon />}
                     size="small"
-                    href={checkEligibility}
+                    onClick={checkEligibility}
                   >
                     Activate
                   </Button>

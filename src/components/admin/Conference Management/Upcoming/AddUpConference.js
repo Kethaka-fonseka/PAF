@@ -12,23 +12,23 @@ function AddUpConference() {
   const [Venue, setVenue] = useState("");
   const [Date, setDate] = useState("");
   const [Seats, setSeats] = useState("");
-  const Status = "Upcoming";
+
 
   const history = useHistory();
 
   function sendData(event) {
     event.preventDefault();
-    const formData = new FormData();
-    formData.append("ConferenceTitle", CTitle);
-    formData.append("Description", Description);
-    formData.append("Venue", Venue);
-    formData.append("Date", Date);
-    formData.append("Seats", Seats);
-    formData.append("Status", Status);
 
-    console.log(formData);
+   const conData = {
+     con_title: CTitle,
+     description: Description,
+     venue: Venue,
+     seats: Seats,
+     date: Date,
+   }
+    console.log(conData);
     axios
-      .post("http://localhost:8070/api/conference/addupconference", formData)
+      .post("http://localhost:8070/api/conferences/add", conData)
       .then((response) => {
         swal({
           title: "Success",
@@ -36,7 +36,7 @@ function AddUpConference() {
           icon: "success",
           SuccessMode: true,
         }).then((willDelete) => {
-          history.push("/");
+          history.push("/admin/upcoming-management");
         });
       })
       .catch((err) => {
@@ -46,6 +46,7 @@ function AddUpConference() {
 
   return (
     <Container>
+
       <Card className={"p-4 mb-3"}>
         <h1 className="text-center sub-titles ">ADD UPCOMING CONFERENCE</h1>
         <hr />

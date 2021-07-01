@@ -6,7 +6,8 @@ import {Button, Col, Container, Row} from "react-bootstrap";
 
 
 
-function Vid() {
+function Vid(props) {
+    const Title = props.title;
     return (
 
 
@@ -16,7 +17,7 @@ function Vid() {
             </video>
     <Container >
 <div className={"caption text-center"}>
-    <h1>Conference Title </h1>
+    <h1>{Title} </h1>
     <Button className={"mb-5"} size={"lg"} variant="outline-warning">Apply Now</Button>
 
 </div>

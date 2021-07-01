@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e4a851c-d203-4733-bb69-e82355c6b896" name="Default Changelist" comment="donse few changes in project">
+    <list default="true" id="0e4a851c-d203-4733-bb69-e82355c6b896" name="Default Changelist" comment="Video Added!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/PendingSubmissions/PendingSubmissions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/PendingSubmissions/PendingSubmissions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Guest Pages/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Guest Pages/Home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Guest Pages/Home/SubHome/Desc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Guest Pages/Home/SubHome/Desc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Guest Pages/Home/SubHome/Vid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Guest Pages/Home/SubHome/Vid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/Conference Management/Upcoming/AddUpConference.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/Conference Management/Upcoming/AddUpConference.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/Conference Management/Upcoming/ConferenceManagement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/Conference Management/Upcoming/ConferenceManagement.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stylesheets/Video.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/stylesheets/Video.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,6 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ug6wuEcvLgMVyA53giurpnPNvy" />

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Time from "./SubHome/Time";
 import Typography from "@material-ui/core/Typography";
 import Speakers from "./SubHome/Speakers";
@@ -7,19 +7,39 @@ import Upcoming from "./SubHome/Upcoming";
 import '../../../stylesheets/titles.css';
 import Timer from "../../Header/Timer";
 import Vid from "./SubHome/Vid";
+import axios from "axios";
 
 function Home() {
+    const [conferences, setConferences] = useState([]);
+    useEffect(() => {
+        axios
+            .get(`http://localhost:8070/api/conferences/main`)
+            .then((res) => {
+                console.log(res);
+                setConferences(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    },[]);
     return (
         <div >
-            <Vid/>
-            <br/><br/><br/>
-            <h1 className={"sub-titles text-center"} >ABOUT</h1>
-            <hr className="divider"/>
-            <br/>
-            <Desc/>
-            <br/>
+            {conferences.map((conference,index) =>{
+              return (
+                  <>
+                      <Vid title={conference.con_title}/>
+                      <br/><br/><br/>
+                      <h1 className={"sub-titles text-center"} >ABOUT</h1>
+                      <hr className="divider"/>
+                      <br/>
+                      <Desc title={conference.con_title} ven={conference.venue} desc={conference.description}/>
+                      <br/>
 
-            <br/>
+                      <br/>
+                  </>
+              )
+            })}
+
             {/*New Line*/}
 
             <h1 className={"sub-titles text-center"} >KEYNOTE SPEAKERS</h1>
