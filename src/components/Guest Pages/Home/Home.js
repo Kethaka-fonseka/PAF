@@ -27,7 +27,7 @@ function Home() {
             {conferences.map((conference,index) =>{
               return (
                   <>
-                      <Vid title={conference.con_title}/>
+                      <Vid title={conference.con_title} id={conference._id}/>
                       <br/><br/><br/>
                       <h1 className={"sub-titles text-center"} >ABOUT</h1>
                       <hr className="divider"/>

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Select from "react-select";
+import {Card, Container} from "react-bootstrap";
+import {Button} from "@material-ui/core";
 
 class AddSubmission extends Component {
   constructor(props) {
@@ -50,8 +52,10 @@ class AddSubmission extends Component {
 
   render() {
     return (
-      <div className="container">
-        <h1>Add Submission:</h1>
+        <Container className={"pt-5"}>
+       <Card className={"p-4"}>
+        <h1 className={"sub-titles text-center"}>Add Submission</h1>
+         <hr/>
         <form onSubmit={this.onSubmit}>
           <div class="mb-3">
             <label htmlFor="subject" class="form-label">
@@ -99,11 +103,10 @@ class AddSubmission extends Component {
             />
           </div>
 
-          <button type="submit" class="btn btn-primary">
-            Submit
-          </button>
+          <Button type={"submit"} size={"large"} variant={"contained"} style={{backgroundColor: "darkred",color: "white" }} fullWidth> Submit</Button>
         </form>
-      </div>
+</Card>
+        </Container>
     );
   }
 }

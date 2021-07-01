@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e4a851c-d203-4733-bb69-e82355c6b896" name="Default Changelist" comment="Video Added!">
+    <list default="true" id="0e4a851c-d203-4733-bb69-e82355c6b896" name="Default Changelist" comment="CFAdded!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Guest Pages/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Guest Pages/Home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Guest Pages/Home/SubHome/Desc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Guest Pages/Home/SubHome/Desc.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Guest Pages/Home/SubHome/Vid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Guest Pages/Home/SubHome/Vid.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/Conference Management/Upcoming/AddUpConference.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/Conference Management/Upcoming/AddUpConference.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/Conference Management/Upcoming/ConferenceManagement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/Conference Management/Upcoming/ConferenceManagement.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stylesheets/Video.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/stylesheets/Video.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/Add Submission/AddSubmission.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Add Submission/AddSubmission.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/ViewSubmission/ViewSubmission.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/ViewSubmission/ViewSubmission.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +60,7 @@
       <workItem from="1625081074317" duration="52000" />
       <workItem from="1625134898678" duration="12812000" />
       <workItem from="1625148913323" duration="6032000" />
+      <workItem from="1625171140077" duration="3374000" />
     </task>
     <task id="LOCAL-00001" summary="add few new files and folders!!">
       <created>1625075201318</created>
@@ -112,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625152813747</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="CFAdded!">
+      <created>1625169997402</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1625169997402</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +144,7 @@
     <MESSAGE value="Login working!" />
     <MESSAGE value="Avatar drop down!" />
     <MESSAGE value="donse few changes in project" />
-    <option name="LAST_COMMIT_MESSAGE" value="donse few changes in project" />
+    <MESSAGE value="CFAdded!" />
+    <option name="LAST_COMMIT_MESSAGE" value="CFAdded!" />
   </component>
 </project>
