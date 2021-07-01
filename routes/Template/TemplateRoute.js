@@ -39,8 +39,9 @@ router.route("/view").get( async (req,res) => {
 })
 
 router.route("/download/:id").get( async (req,res) => {
-    const uploads = await Template.findById({})
-    const location = "C:\\Users\\Ushan\\Desktop\\testing\\back\\uploads"+ uploads.file;
+    //tyjyjy
+    const uploads = await Category.findById(req.params.id)
+    const location = "C:\\Users\\Ushan\\Desktop\\testing\\back\\uploads\\"+ uploads.file;
     res.download(location);
     console.log(location);
 })
