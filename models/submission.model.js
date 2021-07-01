@@ -3,17 +3,17 @@ const mongoose = require("mongoose");
 const submissionSchema = new mongoose.Schema({
   subject: {
     type: String,
-    trime: true,
+    trim: true,
     required: true,
   },
   description: {
     type: String,
-    trime: true,
+    trim: true,
     required: true,
   },
   status: {
     type: String,
-    trime: true,
+    trim: true,
     required: true,
   },
   date: {
@@ -22,14 +22,24 @@ const submissionSchema = new mongoose.Schema({
   },
   role: {
     type: String,
-    trime: true,
+    trim: true,
     required: true,
   },
   file: {
     type: String,
-    trime: true,
+    trim: true,
     required: true,
   },
+  conference:{
+    type: mongoose.Schema.Types.ObjectId,
+    required: false,
+    ref: 'conference'
+  },
+  user:{
+    type:String,
+    trim: true,
+    required: false,
+  }
 });
 
 module.exports = mongoose.model("submission", submissionSchema);

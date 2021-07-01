@@ -20,6 +20,7 @@ router.get('/:id',controllers.getSubmissionByID)
 router.get('/download/:id',controllers.DowloadTheFile)
 router.patch('/approve/:id',controllers.ApproveSubmission)
 router.patch('/decline/:id',controllers.DeclineSubmission)
-router.post('/test',controllers.Testing)
+router.get('/user/:name',controllers.getUserSubmissions)
+
 
 module.exports=router;

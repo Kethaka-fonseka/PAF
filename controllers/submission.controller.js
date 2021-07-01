@@ -16,6 +16,8 @@ const createSubmission = async (req, res) => {
       date: datatime,
       role: req.body.role,
       file: req.file.originalname,
+      conference:req.body.conference,
+      user: req.body.user
     });
     try {
       const newSubmission = await submission.save();
@@ -29,9 +31,20 @@ const createSubmission = async (req, res) => {
 const getSubmissions = async (req, res) => {
   try {
     const submissions = await Submission.find({ status: "pending" });
-    res.status(201).json(submissions);
+    res.status(200).json(submissions);
   } catch (err) {
     res.status(500).json({ message: err.message });
+  }
+};
+
+const getUserSubmissions = async (req, res) => {
+  if (req.params.name) {
+    try {
+      const submissions = await Submission.find({user:req.params.name});
+      res.status(200).json(submissions);
+    } catch (err) {
+      res.status(500).json({ message: err.message });
+    }
   }
 };
 
@@ -39,7 +52,7 @@ const getSubmissionByID = async (req, res) => {
   if (req.params.id) {
     try {
       const submission = await Submission.findById(req.params.id);
-      res.status(201).json(submission);
+      res.status(200).json(submission);
     } catch (err) {
       res.status(500).json({ message: err.message });
     }
@@ -88,9 +101,7 @@ const DeclineSubmission = async (req, res) => {
   }
 };
 
-const Testing=(req,res)=>{
-  res.status(201);
-}
+
 
 module.exports = {
   createSubmission,
@@ -99,5 +110,6 @@ module.exports = {
   DowloadTheFile,
   ApproveSubmission,
   DeclineSubmission,
-  Testing
+  getUserSubmissions
+
 };
