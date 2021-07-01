@@ -34,7 +34,7 @@
  app.use(bodyParser.json());
  
 
-const API=require('./API/api');
+const API=require('./MainAPI/api');
 app.use("/api", API);
 
 const auth=require("./routes/Authantication/auth");

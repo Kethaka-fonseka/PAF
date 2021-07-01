@@ -27,4 +27,11 @@ router.use("/bill", Payment);
 const TemplateRoute = require("../routes/Template/TemplateRoute");
 router.use("/template", TemplateRoute);
 
+//IT19171234===========================================================
+
+const Submission=require("../api/submission.api");
+router.use("/submissions",Submission);
+
+
+//======================================================================
 module.exports = router;

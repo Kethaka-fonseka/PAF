@@ -51,7 +51,7 @@ const DowloadTheFile = async (req, res) => {
   if (req.params.id) {
     try {
       const submission = await Submission.findById(req.params.id);
-      const location = "L:\\Project\\Backend\\upload\\" + submission.file;
+      const location = "C:\\Users\\ASUS\\Desktop\\Back\\ICAF\\submissions\\" + submission.file;
       res.download(location);
     } catch (err) {
       res.status(500).json({ message: err.message });
