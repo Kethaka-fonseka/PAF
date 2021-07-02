@@ -101,6 +101,19 @@ const DeclineSubmission = async (req, res) => {
   }
 };
 
+const PaidStatusHandler = async (req, res) => {
+  if (req.params.id) {
+    try {
+      const submission = await Submission.findById(req.params.id);
+      submission.status = Approved;
+      const approvedSubmission = await submission.save();
+      res.status(200).json(approvedSubmission);
+    } catch (err) {
+      res.status(500).json({ message: err.message });
+    }
+  }
+};
+
 
 
 module.exports = {
@@ -110,6 +123,7 @@ module.exports = {
   DowloadTheFile,
   ApproveSubmission,
   DeclineSubmission,
-  getUserSubmissions
+  getUserSubmissions,
+  PaidStatusHandler
 
 };

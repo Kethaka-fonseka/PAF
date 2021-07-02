@@ -14,6 +14,9 @@ const addUpConference = async (req, res) => {
             seats: req.body.seats,
             status: upStatus,
             date: req.body.date,
+            researcher_fee: req.body.researcher_fee,
+            participant_fee: req.body.participant_fee,
+
         });
         try {
             const newConference = await conference.save();
@@ -33,6 +36,8 @@ const UpdateConference = async (req, res) => {
             seats: req.body.seats,
             status: req.body.status,
             date: req.body.date,
+            researcher_fee: req.body.researcher_fee,
+            participant_fee: req.body.participant_fee,
 
         });
         try {

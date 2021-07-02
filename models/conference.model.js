@@ -30,6 +30,16 @@ const conferenceSchema = new mongoose.Schema({
         required:true,
         type:String,
         trim:true
+    },
+    researcher_fee:{
+        required:true,
+        type:String,
+        trim:true
+    },
+    participant_fee:{
+        required:true,
+        type:String,
+        trim:true
     }
 
     }
