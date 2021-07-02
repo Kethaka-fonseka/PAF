@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "../components/Guest Pages/Home/Home";
 import About from "../components/Guest Pages/About";
 import Contact from "../components/Guest Pages/Contact";
+import ViewTemplates from "../components/Guest Pages/ViewTemplates";
 import Login from "../components/Guest Pages/Authentications/Login";
 import Signup from "../components/Guest Pages/Authentications/Register";
 import Keynotes from "../components/Guest Pages/KeyNotes/keynotes";
@@ -25,7 +26,6 @@ import ContactUsers from "../components/admin/User Management/User/Contact";
 
 import MainConManagement from "../components/admin/Conference Management/Main/MainConManagement";
 import AddUpConference from "../components/admin/Conference Management/Upcoming/AddUpConference";
-import ViewTemplates from "../components/admin/Template Managment/ViewTemplates";
 import AddSubmission from "../components/Users/Add Submission/AddSubmission";
 import PendingSubmissions from "../components/admin/PendingSubmissions/PendingSubmissions";
 import ViewSubmission from "../components/admin/ViewSubmission/ViewSubmission";
@@ -33,6 +33,7 @@ import Submission from "../components/Users/Submissions/Submission";
 import Payment from "../components/Users/Payment";
 import EditKeySpeakers from "../components/admin/Conference Management/Main/EditKeySpeakers";
 import EditSchedule from "../components/admin/Conference Management/Main/EditSchedule";
+import ViewContact from "../components/admin/ContactUs Management/ViewContact";
 
 
 
@@ -51,6 +52,8 @@ function MainRoutes() {
         {/*Ushan start*/}
         <Route path='/admin/add-template' component={AddTemplates} />
         <Route path='/admin/view-template' component={ViewTemplates} />
+        <Route path='/admin/contact' component={ViewContact} />
+        <Route path='/contact' component={Contact} />
         {/*ushan end*/}
 
         <Route path='/admin/requestmanagement' component={RequestManagement} />

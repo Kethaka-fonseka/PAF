@@ -85,6 +85,12 @@ if(role[0] === token) {
       icon: <FaIcons.FaEnvelopeOpenText/>,
       cName: "nav-text",
     },
+     {
+         title: "Contact Us",
+         path: "/admin/contact",
+         icon: <FaIcons.FaCartPlus/>,
+         cName: "nav-text",
+     },
   ];
 
 }

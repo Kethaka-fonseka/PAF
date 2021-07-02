@@ -1,32 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e4a851c-d203-4733-bb69-e82355c6b896" name="Default Changelist" comment="Latest flow!">
+    <list default="true" id="0e4a851c-d203-4733-bb69-e82355c6b896" name="Default Changelist" comment="conference - submission flow!">
+      <change afterPath="$PROJECT_DIR$/src/components/Guest Pages/ViewTemplates.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/admin/ContactUs Management/ViewContact.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/stylesheets/AddTemp.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/stylesheets/Contact.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_2_2021_12_15_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_2_2021_12_15_AM__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_2_2021_12_15_AM__Default_Changelist_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_2_2021_12_15_AM__Default_Changelist_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Routes/mainRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes/mainRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Guest Pages/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Guest Pages/Home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Guest Pages/Home/SubHome/Upcoming.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Guest Pages/Home/SubHome/Upcoming.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/Conference Management/Main/EditKeySpeakers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/Conference Management/Main/EditKeySpeakers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/Conference Management/Main/EditSchedule.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/Conference Management/Main/EditSchedule.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/Conference Management/Main/MainConManagement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/Conference Management/Main/MainConManagement.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/admin/Conference Management/Upcoming/ConferenceManagement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/Conference Management/Upcoming/ConferenceManagement.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Guest Pages/Contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Guest Pages/Contact.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/NavBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/Template Managment/AddTemplates.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/Template Managment/AddTemplates.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/Template Managment/ViewTemplates.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/sidebar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
   </component>
   <component name="ProjectId" id="1ug6wuEcvLgMVyA53giurpnPNvy" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -39,12 +45,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/stylesheets" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/Guest Pages" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="E:\Application Frameworks\Frontend\node_modules\prettier" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
@@ -53,6 +61,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Ushan\WebstormProjects\PAF\src\components\Guest Pages" />
       <recent name="E:\Application Frameworks\Frontend\src\stylesheets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -75,7 +84,7 @@
       <workItem from="1625081074317" duration="52000" />
       <workItem from="1625134898678" duration="12812000" />
       <workItem from="1625148913323" duration="6032000" />
-      <workItem from="1625171140077" duration="35623000" />
+      <workItem from="1625171140077" duration="21515000" />
     </task>
     <task id="LOCAL-00001" summary="add few new files and folders!!">
       <created>1625075201318</created>
@@ -140,14 +149,7 @@
       <option name="project" value="LOCAL" />
       <updated>1625174625044</updated>
     </task>
-    <task id="LOCAL-00010" summary="Latest flow!">
-      <created>1625192862117</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1625192862118</updated>
-    </task>
-    <option name="localTasksCounter" value="11" />
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,7 +177,6 @@
     <MESSAGE value="donse few changes in project" />
     <MESSAGE value="CFAdded!" />
     <MESSAGE value="conference - submission flow!" />
-    <MESSAGE value="Latest flow!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Latest flow!" />
+    <option name="LAST_COMMIT_MESSAGE" value="conference - submission flow!" />
   </component>
 </project>

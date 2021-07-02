@@ -66,7 +66,7 @@ function NavBar() {
             <Nav.Link href='/'>Home</Nav.Link>
             <Nav.Link href='/keynotes'>Keynotes</Nav.Link>
             <Nav.Link href='/events'>Events</Nav.Link>
-            <Nav.Link href='/templates'>Templates</Nav.Link>
+            <Nav.Link href='/admin/view-template'>Templates</Nav.Link>
             <Nav.Link href='/contact'>Contact </Nav.Link>
             <Nav.Link href='/about'>About us</Nav.Link>
           </Nav>
@@ -125,7 +125,7 @@ style={{marginTop: "40px"}}
             <Nav.Link href='/'>Home</Nav.Link>
             <Nav.Link href='/keynotes'>Keynotes</Nav.Link>
             <Nav.Link href='/events'>Events</Nav.Link>
-            <Nav.Link href='/templates'>Templates</Nav.Link>
+            <Nav.Link href='/admin/view-template'>Templates</Nav.Link>
             <Nav.Link href='/contact'>Contact </Nav.Link>
             <Nav.Link href='/about'>About us</Nav.Link>
           </Nav>
