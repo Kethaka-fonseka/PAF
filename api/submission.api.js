@@ -22,6 +22,7 @@ router.patch('/approve/:id',controllers.ApproveSubmission)
 router.patch('/decline/:id',controllers.DeclineSubmission)
 router.get('/user/:name',controllers.getUserSubmissions)
 router.patch('/paid/:id',controllers.PaidStatusHandler)
+router.get('/approved',controllers.getApprovedSubmissions);
 
 
 module.exports=router;

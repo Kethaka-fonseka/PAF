@@ -115,6 +115,18 @@ const PaidStatusHandler = async (req, res) => {
 };
 
 
+const getApprovedSubmissions = async (req, res) => {
+  try {
+    const submissions = await Submission.find({ status: Approved });
+    res.status(200).json(submissions);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+
+
+
 
 module.exports = {
   createSubmission,
@@ -124,6 +136,7 @@ module.exports = {
   ApproveSubmission,
   DeclineSubmission,
   getUserSubmissions,
-  PaidStatusHandler
+  PaidStatusHandler,
+  getApprovedSubmissions
 
 };
