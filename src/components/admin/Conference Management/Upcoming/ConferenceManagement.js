@@ -98,6 +98,8 @@ function makeMain(id){
               <th>Venue</th>
               <th>Date</th>
               <th>Seat Count</th>
+                <th>Researcher Fee</th>
+                <th>Participant Fee</th>
             </tr>
           </thead>
           <tbody>
@@ -109,6 +111,8 @@ function makeMain(id){
                 <td>{conference.venue}</td>
                 <td>{conference.date}</td>
                 <td>{conference.seats}</td>
+                  <td>LKR: {conference.researcher_fee}</td>
+                  <td>LKR: {conference.participant_fee}</td>
                 <td>
                   <Button
                     className={"pl-0 pr-4"}

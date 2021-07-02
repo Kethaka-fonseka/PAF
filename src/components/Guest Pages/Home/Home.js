@@ -8,9 +8,12 @@ import '../../../stylesheets/titles.css';
 import Timer from "../../Header/Timer";
 import Vid from "./SubHome/Vid";
 import axios from "axios";
+import {Container} from "@material-ui/core";
+import {Row} from "react-bootstrap";
 
 function Home() {
     const [conferences, setConferences] = useState([]);
+    const [upconferences, setupConferences] = useState([]);
     useEffect(() => {
         axios
             .get(`http://localhost:8070/api/conferences/main`)
@@ -25,6 +28,17 @@ function Home() {
             .catch((err) => {
                 console.log(err);
             });
+
+        axios
+            .get(`http://localhost:8070/api/conferences/up`)
+            .then((res) => {
+                console.log(res.data);
+                setupConferences(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+
     },[2]);
     return (
         <div >
@@ -62,9 +76,19 @@ function Home() {
                 <br/>
 
             <h1 className={"sub-titles text-center"} >UPCOMING CONFERENCES</h1>
+
             <hr className="divider"/>
             <br/>
-            <Upcoming/>
+            <Container>
+                <Row className="g-3" >
+            {upconferences.map((upconference,index) =>{
+                return (
+                        <Upcoming conference ={upconference}/>
+
+                )
+            })}
+                </Row>
+                </Container>
             <br/>
 
         </div>

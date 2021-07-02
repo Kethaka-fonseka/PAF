@@ -31,6 +31,8 @@ import PendingSubmissions from "../components/admin/PendingSubmissions/PendingSu
 import ViewSubmission from "../components/admin/ViewSubmission/ViewSubmission";
 import Submission from "../components/Users/Submissions/Submission";
 import Payment from "../components/Users/Payment";
+import EditKeySpeakers from "../components/admin/Conference Management/Main/EditKeySpeakers";
+import EditSchedule from "../components/admin/Conference Management/Main/EditSchedule";
 
 
 
@@ -57,6 +59,7 @@ function MainRoutes() {
           path='/admin/conference-management'
           component={MainConManagement}
         />
+
         <Route
           path='/admin/upcoming-management'
           component={ConferenceManagement}
@@ -65,6 +68,14 @@ function MainRoutes() {
         <Route
           path='/admin/updateupconference/:id'
           component={AddUpConference}
+        />
+        <Route
+          path='/admin/add-images/:id'
+          component={EditKeySpeakers}
+        />
+        <Route
+            path='/admin/add-timeline/:id'
+            component={EditSchedule}
         />
         {/*Mandara end*/}
 

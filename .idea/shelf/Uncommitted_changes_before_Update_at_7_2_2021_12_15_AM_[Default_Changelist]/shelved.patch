@@ -1,0 +1,1182 @@
+Index: src/Routes/mainRoutes.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from \"react\";\r\nimport { BrowserRouter as Router, Route, Switch } from \"react-router-dom\";\r\nimport Home from \"../components/Guest Pages/Home/Home\";\r\nimport About from \"../components/Guest Pages/About\";\r\nimport Contact from \"../components/Guest Pages/Contact\";\r\nimport Login from \"../components/Guest Pages/Authentications/Login\";\r\nimport Signup from \"../components/Guest Pages/Authentications/Register\";\r\nimport Keynotes from \"../components/Guest Pages/KeyNotes/keynotes\";\r\nimport RequestManagement from \"../components/admin/Request Managment/RequestManagement\";\r\nimport AddTemplates from \"../components/admin/Template Managment/AddTemplates\";\r\nimport ConferenceManagement from \"../components/admin/Conference Management/Upcoming/ConferenceManagement\";\r\nimport AllNav from \"../components/admin/AllNav\";\r\nimport SupportManagment from \"../components/admin/Support Management/SupportManagment\";\r\n\r\nimport StaffManagement from \"../components/admin/User Management/Staff/Management\";\r\nimport AddStaffMembers from \"../components/admin/User Management/Staff/AddUsers\";\r\nimport EditStaffMembers from \"../components/admin/User Management/Staff/EditUsers\";\r\nimport DeleteStaffMembers from \"../components/admin/User Management/Staff/DeleteUsers\";\r\nimport ViewStaffRecords from \"../components/admin/User Management/Staff/ViewRecords\";\r\nimport ContactStaffMembers from \"../components/admin/User Management/Staff/Contact\";\r\n\r\nimport UserManagement from \"../components/admin/User Management/User/Management\";\r\nimport DeleteUsers from \"../components/admin/User Management/User/DeleteUsers\";\r\nimport ContactUsers from \"../components/admin/User Management/User/Contact\";\r\n\r\nimport MainConManagement from \"../components/admin/Conference Management/Main/MainConManagement\";\r\nimport AddUpConference from \"../components/admin/Conference Management/Upcoming/AddUpConference\";\r\nimport ViewTemplates from \"../components/admin/Template Managment/ViewTemplates\";\r\n\r\n{\r\n  /* <Route exact path=\"/\" component={Home}/>\r\n<Route  path=\"/add\" component={AddSubmission}/>\r\n<Route  path=\"/pending\" component={PendingSubmissions}/>\r\n<Route  path=\"/:id\" component={ViewSubmission}/> */\r\n}\r\n\r\nfunction MainRoutes() {\r\n  return (\r\n    <Router>\r\n      <AllNav />\r\n      <Switch>\r\n        <Route path='/' exact component={Home} />\r\n        <Route path='/keynotes' component={Keynotes} />\r\n        <Route path='/about' component={About} />\r\n        <Route path='/contact' component={Contact} />\r\n        <Route path='/login' component={Login} />\r\n        <Route path='/signup' component={Signup} />\r\n        {/*Ushan start*/}\r\n        <Route path='/admin/add-template' component={AddTemplates} />\r\n        <Route path='/admin/view-template' component={ViewTemplates} />\r\n        {/*ushan end*/}\r\n\r\n        <Route path='/admin/requestmanagement' component={RequestManagement} />\r\n        {/*Mandara start*/}\r\n        <Route\r\n          path='/admin/conference-management'\r\n          component={MainConManagement}\r\n        />\r\n        <Route\r\n          path='/admin/upcoming-management'\r\n          component={ConferenceManagement}\r\n        />\r\n        <Route path='/admin/addupconference' component={AddUpConference} />\r\n        <Route\r\n          path='/admin/updateupconference/:id'\r\n          component={AddUpConference}\r\n        />\r\n        {/*Mandara end*/}\r\n\r\n        {/*Sandaruwan start*/}\r\n        <Route path='/admin/supportmanagement' component={SupportManagment} />\r\n\r\n        <Route path='/admin/staff-management' component={StaffManagement} />\r\n        <Route\r\n          path='/admin/staffmanagement/addmembers'\r\n          component={AddStaffMembers}\r\n        />\r\n        <Route\r\n          path='/admin/staffmanagement/editmembers/:id'\r\n          component={EditStaffMembers}\r\n        />\r\n        <Route\r\n          path='/admin/staffmanagement/deletemembers/:id'\r\n          component={DeleteStaffMembers}\r\n        />\r\n\r\n        <Route\r\n          path='/admin/staffmanagement/view/:id'\r\n          component={ViewStaffRecords}\r\n        />\r\n\r\n        <Route\r\n          path='/admin/staffmanagement/contactstaff/:id'\r\n          component={ContactStaffMembers}\r\n        />\r\n        <Route path='/admin/user-management' component={UserManagement} />\r\n        <Route\r\n          path='/admin/usermanagement/deletemembers/:id'\r\n          component={DeleteUsers}\r\n        />\r\n        <Route\r\n          path='/admin/usermanagement/editmembers/:id'\r\n          component={ContactUsers}\r\n        />\r\n\r\n        {/* <Route exact path=\"/\" component={Home}/>\r\n    <Route  path=\"/add\" component={AddSubmission}/>\r\n    <Route  path=\"/pending\" component={PendingSubmissions}/>\r\n    <Route  path=\"/:id\" component={ViewSubmission}/> */}\r\n\r\n        {/*Sandaruwan end*/}\r\n      </Switch>\r\n    </Router>\r\n  );\r\n}\r\n\r\nexport default MainRoutes;\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Routes/mainRoutes.js b/src/Routes/mainRoutes.js
+--- a/src/Routes/mainRoutes.js	
++++ b/src/Routes/mainRoutes.js	
+@@ -26,91 +26,87 @@
+ import MainConManagement from "../components/admin/Conference Management/Main/MainConManagement";
+ import AddUpConference from "../components/admin/Conference Management/Upcoming/AddUpConference";
+ import ViewTemplates from "../components/admin/Template Managment/ViewTemplates";
++import AddSubmission from "../components/Users/Add Submission/AddSubmission";
++import PendingSubmissions from "../components/admin/PendingSubmissions/PendingSubmissions";
++import ViewSubmission from "../components/admin/ViewSubmission/ViewSubmission";
++
+ 
+-{
+-  /* <Route exact path="/" component={Home}/>
+-<Route  path="/add" component={AddSubmission}/>
+-<Route  path="/pending" component={PendingSubmissions}/>
+-<Route  path="/:id" component={ViewSubmission}/> */
+-}
++
+ 
+ function MainRoutes() {
+   return (
+-    <Router>
+-      <AllNav />
+-      <Switch>
+-        <Route path='/' exact component={Home} />
+-        <Route path='/keynotes' component={Keynotes} />
+-        <Route path='/about' component={About} />
+-        <Route path='/contact' component={Contact} />
+-        <Route path='/login' component={Login} />
+-        <Route path='/signup' component={Signup} />
+-        {/*Ushan start*/}
+-        <Route path='/admin/add-template' component={AddTemplates} />
+-        <Route path='/admin/view-template' component={ViewTemplates} />
+-        {/*ushan end*/}
++      <Router>
++        <AllNav />
++        <Switch>
++          <Route path='/' exact component={Home} />
++          <Route path='/keynotes' component={Keynotes} />
++          <Route path='/about' component={About} />
++          <Route path='/contact' component={Contact} />
++          <Route path='/login' component={Login} />
++          <Route path='/signup' component={Signup} />
++          {/*Ushan start*/}
++          <Route path='/admin/add-template' component={AddTemplates} />
++          <Route path='/admin/view-template' component={ViewTemplates} />
++          {/*ushan end*/}
+ 
+-        <Route path='/admin/requestmanagement' component={RequestManagement} />
+-        {/*Mandara start*/}
+-        <Route
+-          path='/admin/conference-management'
+-          component={MainConManagement}
+-        />
+-        <Route
+-          path='/admin/upcoming-management'
+-          component={ConferenceManagement}
+-        />
+-        <Route path='/admin/addupconference' component={AddUpConference} />
+-        <Route
+-          path='/admin/updateupconference/:id'
+-          component={AddUpConference}
+-        />
+-        {/*Mandara end*/}
++          <Route path='/admin/requestmanagement' component={RequestManagement} />
++          {/*Mandara start*/}
++          <Route
++              path='/admin/conference-management'
++              component={MainConManagement}
++          />
++          <Route
++              path='/admin/upcoming-management'
++              component={ConferenceManagement}
++          />
++          <Route path='/admin/addupconference' component={AddUpConference} />
++          <Route
++              path='/admin/updateupconference/:id'
++              component={AddUpConference}
++          />
++          {/*Mandara end*/}
+ 
+-        {/*Sandaruwan start*/}
+-        <Route path='/admin/supportmanagement' component={SupportManagment} />
++          {/*Sandaruwan start*/}
++          <Route path='/admin/supportmanagement' component={SupportManagment} />
+ 
+-        <Route path='/admin/staff-management' component={StaffManagement} />
+-        <Route
+-          path='/admin/staffmanagement/addmembers'
+-          component={AddStaffMembers}
+-        />
+-        <Route
+-          path='/admin/staffmanagement/editmembers/:id'
+-          component={EditStaffMembers}
+-        />
+-        <Route
+-          path='/admin/staffmanagement/deletemembers/:id'
+-          component={DeleteStaffMembers}
+-        />
++          <Route path='/admin/staff-management' component={StaffManagement} />
++          <Route
++              path='/admin/staffmanagement/addmembers'
++              component={AddStaffMembers}
++          />
++          <Route
++              path='/admin/staffmanagement/editmembers/:id'
++              component={EditStaffMembers}
++          />
++          <Route
++              path='/admin/staffmanagement/deletemembers/:id'
++              component={DeleteStaffMembers}
++          />
+ 
+-        <Route
+-          path='/admin/staffmanagement/view/:id'
+-          component={ViewStaffRecords}
+-        />
++          <Route
++              path='/admin/staffmanagement/view/:id'
++              component={ViewStaffRecords}
++          />
+ 
+-        <Route
+-          path='/admin/staffmanagement/contactstaff/:id'
+-          component={ContactStaffMembers}
+-        />
+-        <Route path='/admin/user-management' component={UserManagement} />
+-        <Route
+-          path='/admin/usermanagement/deletemembers/:id'
+-          component={DeleteUsers}
+-        />
+-        <Route
+-          path='/admin/usermanagement/editmembers/:id'
+-          component={ContactUsers}
+-        />
++          <Route
++              path='/admin/staffmanagement/contactstaff/:id'
++              component={ContactStaffMembers}
++          />
++          <Route path='/admin/user-management' component={UserManagement} />
++          <Route
++              path='/admin/usermanagement/deletemembers/:id'
++              component={DeleteUsers}
++          />
++          <Route
++              path='/admin/usermanagement/editmembers/:id'
++              component={ContactUsers}
++          />
++          <Route  path="/submissions/add" component={AddSubmission}/>
++          <Route  path="/submissions/pending" component={PendingSubmissions}/>
++          <Route  path="/submissions/view/:id" component={ViewSubmission}/>
+ 
+-        {/* <Route exact path="/" component={Home}/>
+-    <Route  path="/add" component={AddSubmission}/>
+-    <Route  path="/pending" component={PendingSubmissions}/>
+-    <Route  path="/:id" component={ViewSubmission}/> */}
+-
+-        {/*Sandaruwan end*/}
+-      </Switch>
+-    </Router>
++        </Switch>
++      </Router>
+   );
+ }
+ 
+Index: src/components/Guest Pages/Home/Home.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from 'react';\r\nimport Time from \"./SubHome/Time\";\r\nimport Typography from \"@material-ui/core/Typography\";\r\nimport Speakers from \"./SubHome/Speakers\";\r\nimport Desc from \"./SubHome/Desc\";\r\nimport Upcoming from \"./SubHome/Upcoming\";\r\nimport '../../../stylesheets/titles.css';\r\nimport Timer from \"../../Header/Timer\";\r\nimport Vid from \"./SubHome/Vid\";\r\n\r\nfunction Home() {\r\n    return (\r\n        <div >\r\n            <Vid/>\r\n            <br/><br/><br/>\r\n            <h1 className={\"sub-titles text-center\"} >ABOUT</h1>\r\n            <hr className=\"divider\"/>\r\n            <br/>\r\n            <Desc/>\r\n            <br/>\r\n\r\n            <br/>\r\n            {/*New Line*/}\r\n\r\n            <h1 className={\"sub-titles text-center\"} >KEYNOTE SPEAKERS</h1>\r\n            <hr className=\"divider\"/>\r\n                        <br/>\r\n                        <Speakers/>\r\n                        <br/>\r\n\r\n            {/*New Line*/}\r\n\r\n\r\n            <h1 className={\"sub-titles text-center\"} >CONFERENCE TIMELINE</h1>\r\n            <hr className=\"divider\"/>\r\n                <br/>\r\n                <Time/>\r\n                <br/>\r\n\r\n            <h1 className={\"sub-titles text-center\"} >UPCOMING CONFERENCES</h1>\r\n            <hr className=\"divider\"/>\r\n            <br/>\r\n            <Upcoming/>\r\n            <br/>\r\n\r\n        </div>\r\n    );\r\n}\r\n\r\nexport default Home;
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/Guest Pages/Home/Home.js b/src/components/Guest Pages/Home/Home.js
+--- a/src/components/Guest Pages/Home/Home.js	
++++ b/src/components/Guest Pages/Home/Home.js	
+@@ -1,4 +1,4 @@
+-import React from 'react';
++import React, {useEffect, useState} from 'react';
+ import Time from "./SubHome/Time";
+ import Typography from "@material-ui/core/Typography";
+ import Speakers from "./SubHome/Speakers";
+@@ -7,43 +7,62 @@
+ import '../../../stylesheets/titles.css';
+ import Timer from "../../Header/Timer";
+ import Vid from "./SubHome/Vid";
++import axios from "axios";
+ 
+ function Home() {
++    const [conferences, setConferences] = useState([]);
++    useEffect(() => {
++        axios
++            .get("http://localhost:8070/api/conferences/main")
++            .then((res) => {
++                console.log(res);
++                setConferences(res.data);
++            })
++            .catch((err) => {
++                console.log(err);
++            });
++    },[]);
++
+     return (
+-        <div >
+-            <Vid/>
+-            <br/><br/><br/>
+-            <h1 className={"sub-titles text-center"} >ABOUT</h1>
+-            <hr className="divider"/>
+-            <br/>
+-            <Desc/>
+-            <br/>
++        conferences.map((conference,index)=>{
++                return(
++                    <>
++                    <Vid find = {conference._id} title={conference.con_title}/>
++                <br/><br/><br/>
++                <h1 className={"sub-titles text-center"} >ABOUT</h1>
++                <hr className="divider"/>
++                <br/>
++                <Desc/>
++                <br/>
+ 
+-            <br/>
+-            {/*New Line*/}
++                <br/>
++                {/*New Line*/}
+ 
+-            <h1 className={"sub-titles text-center"} >KEYNOTE SPEAKERS</h1>
+-            <hr className="divider"/>
+-                        <br/>
+-                        <Speakers/>
+-                        <br/>
++                <h1 className={"sub-titles text-center"} >KEYNOTE SPEAKERS</h1>
++                <hr className="divider"/>
++                <br/>
++                <Speakers/>
++                <br/>
+ 
+-            {/*New Line*/}
++                {/*New Line*/}
+ 
+ 
+-            <h1 className={"sub-titles text-center"} >CONFERENCE TIMELINE</h1>
+-            <hr className="divider"/>
++                <h1 className={"sub-titles text-center"} >CONFERENCE TIMELINE</h1>
++                <hr className="divider"/>
+                 <br/>
+                 <Time/>
+                 <br/>
+ 
+-            <h1 className={"sub-titles text-center"} >UPCOMING CONFERENCES</h1>
+-            <hr className="divider"/>
+-            <br/>
+-            <Upcoming/>
+-            <br/>
++                <h1 className={"sub-titles text-center"} >UPCOMING CONFERENCES</h1>
++                <hr className="divider"/>
++                <br/>
++                <Upcoming/>
++                <br/>
++                    </>
++                )
+ 
+-        </div>
++            }
++)
+     );
+ }
+ 
+Index: src/components/admin/Conference Management/Upcoming/ConferenceManagement.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, { useEffect, useState } from \"react\";\r\nimport { Card, Container, Table } from \"react-bootstrap\";\r\nimport DeleteIcon from \"@material-ui/icons/Delete\";\r\nimport { Button } from \"@material-ui/core\";\r\nimport AddIcon from \"@material-ui/icons/Add\";\r\nimport CheckIcon from \"@material-ui/icons/Check\";\r\nimport PublishIcon from \"@material-ui/icons/Publish\";\r\nimport \"../../../../stylesheets/titles.css\";\r\nimport axios from \"axios\";\r\nimport swal from \"sweetalert\";\r\nfunction ConferenceManagement() {\r\n  const [conferences, setConferences] = useState([]);\r\n  const [ID, setID] = useState(\"\");\r\n\r\n  useEffect(() => {\r\n    axios\r\n      .get(`http://localhost:8070/api/conference/upconferences`)\r\n      .then((res) => {\r\n        console.log(res);\r\n        setConferences(res.data);\r\n      })\r\n      .catch((err) => {\r\n        console.log(err);\r\n      });\r\n  });\r\n\r\n  function deleteConferences(e) {\r\n    e.preventDefault();\r\n    const id = 1000;\r\n    console.log(id);\r\n\r\n    axios\r\n      .delete(`http://localhost:8070/api/deletemanageusers/delete/${id}`)\r\n      .then((res) => {\r\n        alert(\"Deleted\");\r\n      })\r\n      .catch((err) => {\r\n        alert(err);\r\n      });\r\n  }\r\n  function checkEligibility() {}\r\n\r\n  return (\r\n    <Container fluid>\r\n      <Card className={\"p-4\"}>\r\n        <h1 className=\"text-center sub-titles \">Upcoming Events</h1>\r\n        <hr />\r\n        <Button\r\n          className={\"d-flex \"}\r\n          variant={\"contained\"}\r\n          color={\"primary\"}\r\n          startIcon={<AddIcon />}\r\n          href={\"/admin/addupconference\"}\r\n        >\r\n          Add Conference\r\n        </Button>\r\n        <Table responsive striped bordered hover variant=\"dark\">\r\n          <thead>\r\n            <tr className={\"text-center\"}>\r\n              <th>Title</th>\r\n              <th>Description</th>\r\n              <th>Venue</th>\r\n              <th>Date</th>\r\n              <th>Seat Count</th>\r\n            </tr>\r\n          </thead>\r\n          <tbody>\r\n            {conferences.map((conference, index) => (\r\n              <tr className={\"text-center\"}>\r\n                <td>{conference.ConferenceTitle}</td>\r\n                <td>{conference.Description}</td>\r\n                <td>{conference.Venue}</td>\r\n                <td>{conference.Date}</td>\r\n                <td>{conference.Seat}</td>\r\n                <td>\r\n                  <Button\r\n                    className={\"pl-0 pr-4\"}\r\n                    variant=\"contained\"\r\n                    startIcon={<DeleteIcon />}\r\n                    color=\"success\"\r\n                    size=\"small\"\r\n                    value={setID(conference._id)}\r\n                    onClick={deleteConferences}\r\n                  >\r\n                    Delete\r\n                  </Button>\r\n                </td>\r\n                <td>\r\n                  <Button\r\n                    className={\"pl-0 pr-4\"}\r\n                    variant=\"contained\"\r\n                    color=\"secondary\"\r\n                    startIcon={<CheckIcon />}\r\n                    size=\"small\"\r\n                    href={checkEligibility}\r\n                  >\r\n                    Activate\r\n                  </Button>\r\n                </td>\r\n                <td>\r\n                  <Button\r\n                    className={\"pl-0 pr-4\"}\r\n                    variant=\"contained\"\r\n                    color=\"primary\"\r\n                    startIcon={<PublishIcon />}\r\n                    size=\"small\"\r\n                  >\r\n                    Update\r\n                  </Button>\r\n                </td>\r\n              </tr>\r\n            ))}\r\n          </tbody>\r\n        </Table>\r\n      </Card>\r\n    </Container>\r\n  );\r\n}\r\n\r\nexport default ConferenceManagement;\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/admin/Conference Management/Upcoming/ConferenceManagement.js b/src/components/admin/Conference Management/Upcoming/ConferenceManagement.js
+--- a/src/components/admin/Conference Management/Upcoming/ConferenceManagement.js	
++++ b/src/components/admin/Conference Management/Upcoming/ConferenceManagement.js	
+@@ -10,11 +10,13 @@
+ import swal from "sweetalert";
+ function ConferenceManagement() {
+   const [conferences, setConferences] = useState([]);
++  const [deleted, setDeleted] = useState(false);
++  const [activated, setActivated] = useState(false);
+   const [ID, setID] = useState("");
+ 
+   useEffect(() => {
+     axios
+-      .get(`http://localhost:8070/api/conference/upconferences`)
++      .get("http://localhost:8070/api/conferences/up")
+       .then((res) => {
+         console.log(res);
+         setConferences(res.data);
+@@ -22,23 +24,38 @@
+       .catch((err) => {
+         console.log(err);
+       });
+-  });
++  },[deleted,activated]);
+ 
+-  function deleteConferences(e) {
+-    e.preventDefault();
+-    const id = 1000;
++  function deleteConferences(id) {
+     console.log(id);
+ 
+     axios
+-      .delete(`http://localhost:8070/api/deletemanageusers/delete/${id}`)
++      .delete(`http://localhost:8070/api/conferences/${id}`)
+       .then((res) => {
+         alert("Deleted");
++        setDeleted(true)
+       })
+       .catch((err) => {
+         alert(err);
+       });
++  }
++  function checkEligibility() {
++
++  }
++
++  function Activate(id) {
++    console.log(id);
++
++    axios
++        .patch(`http://localhost:8070/api/conferences/${id}`)
++        .then((res) => {
++          alert("Activated");
++          setDeleted(true)
++        })
++        .catch((err) => {
++          alert(err);
++        });
+   }
+-  function checkEligibility() {}
+ 
+   return (
+     <Container fluid>
+@@ -65,51 +82,52 @@
+             </tr>
+           </thead>
+           <tbody>
+-            {conferences.map((conference, index) => (
++            { conferences.map((conference, index) => {
++return(
+               <tr className={"text-center"}>
+-                <td>{conference.ConferenceTitle}</td>
+-                <td>{conference.Description}</td>
+-                <td>{conference.Venue}</td>
+-                <td>{conference.Date}</td>
+-                <td>{conference.Seat}</td>
++                <td>{conference.con_title}</td>
++                <td>{conference.description}</td>
++                <td>{conference.venue}</td>
++                <td>{conference.date}</td>
++                <td>{conference.seats}</td>
+                 <td>
+                   <Button
+-                    className={"pl-0 pr-4"}
+-                    variant="contained"
+-                    startIcon={<DeleteIcon />}
+-                    color="success"
+-                    size="small"
+-                    value={setID(conference._id)}
+-                    onClick={deleteConferences}
++                      className={"pl-0 pr-4"}
++                      variant="contained"
++                      startIcon={<DeleteIcon/>}
++                      color="success"
++                      size="small"
++                      onClick={deleteConferences.bind(this,conference._id)}
+                   >
+                     Delete
+                   </Button>
+                 </td>
+                 <td>
+                   <Button
+-                    className={"pl-0 pr-4"}
+-                    variant="contained"
+-                    color="secondary"
+-                    startIcon={<CheckIcon />}
+-                    size="small"
+-                    href={checkEligibility}
++                      className={"pl-0 pr-4"}
++                      variant="contained"
++                      color="secondary"
++                      startIcon={<CheckIcon/>}
++                      size="small"
++                     onClick={Activate.bind(this,conference._id)}
+                   >
+                     Activate
+                   </Button>
+                 </td>
+                 <td>
+                   <Button
+-                    className={"pl-0 pr-4"}
+-                    variant="contained"
+-                    color="primary"
+-                    startIcon={<PublishIcon />}
+-                    size="small"
++                      className={"pl-0 pr-4"}
++                      variant="contained"
++                      color="primary"
++                      startIcon={<PublishIcon/>}
++                      size="small"
+                   >
+                     Update
+                   </Button>
+                 </td>
+               </tr>
+-            ))}
++
++) })}
+           </tbody>
+         </Table>
+       </Card>
+Index: src/components/admin/sidebar.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from \"react\";\r\nimport * as AiIcons from \"react-icons/ai\";\r\nimport * as FaIcons from \"react-icons/fa\";\r\nimport * as IoIcons from \"react-icons/io\";\r\n\r\n\r\n\r\nconst token = localStorage.getItem(\"user\");\r\nconst role = [\"Admin\",\"Editor\",\"Reviewer\"];\r\nlet SidebarData=[];\r\n\r\nif(role[0] === token) {\r\n SidebarData = [\r\n    {\r\n      title: \"User\",\r\n      icon: <IoIcons.IoMdPeople/>,\r\n      cName: \"nav-text\",\r\n      subNav: [\r\n        {\r\n          title: \"User Management\",\r\n          path: \"/admin/user-management\",\r\n          icon: <IoIcons.IoIosPaper/>,\r\n          cName: \"nav-text\",\r\n        },\r\n        {\r\n          title: \"Staff Management\",\r\n          path: \"/admin/staff-management\",\r\n          icon: <IoIcons.IoIosPaper/>,\r\n          cName: \"nav-text\",\r\n        },\r\n      ],\r\n\r\n    },\r\n    {\r\n      title: \"Conference\",\r\n      icon: <AiIcons.AiFillHome/>,\r\n      cName: \"nav-text\",\r\n      subNav: [\r\n        {\r\n          title: \"Main Conference\",\r\n          path: \"/admin/conference-management\",\r\n          icon: <IoIcons.IoIosPaper/>,\r\n          cName: \"nav-text\",\r\n        },\r\n        {\r\n          title: \"Upcoming Conference\",\r\n          path: \"/admin/upcoming-management\",\r\n          icon: <IoIcons.IoIosPaper/>,\r\n          cName: \"nav-text\",\r\n        },\r\n      ],\r\n\r\n    },\r\n\r\n    {\r\n      title: \"Template\",\r\n      icon: <AiIcons.AiFillCodeSandboxSquare/>,\r\n      cName: \"nav-text\",\r\n      subNav: [\r\n        {\r\n          title: \"Add Templates\",\r\n          path: \"/admin/add-template\",\r\n          icon: <IoIcons.IoIosPaper/>,\r\n          cName: \"nav-text\",\r\n        },\r\n        {\r\n          title: \"View Templates\",\r\n          path: \"/admin/view-template\",\r\n          icon: <IoIcons.IoIosPaper/>,\r\n          cName: \"nav-text\",\r\n        },\r\n      ],\r\n    },\r\n\r\n    {\r\n      title: \"Requests\",\r\n      path: \"/admin/requestmanagement\",\r\n      icon: <FaIcons.FaCartPlus/>,\r\n      cName: \"nav-text\",\r\n    },\r\n\r\n    {\r\n      title: \"Support\",\r\n      path: \"/admin/supportmanagement\",\r\n      icon: <FaIcons.FaEnvelopeOpenText/>,\r\n      cName: \"nav-text\",\r\n    },\r\n  ];\r\n\r\n}\r\nelse if(role[1] === token) {\r\n SidebarData = [\r\n        {\r\n          title: \"Main Conference\",\r\n          path: \"/admin/conference-management\",\r\n          icon: <IoIcons.IoIosPaper/>,\r\n          cName: \"nav-text\",\r\n        },\r\n        {\r\n          title: \"Upcoming Conference\",\r\n          path: \"/admin/upcoming-management\",\r\n          icon: <IoIcons.IoIosPaper/>,\r\n          cName: \"nav-text\",\r\n        },\r\n]\r\n\r\n}\r\nif(role[2] === token) {\r\n SidebarData = [\r\n\r\n      {\r\n        title: \"Requests\",\r\n        path: \"/admin/requestmanagement\",\r\n        icon: <FaIcons.FaCartPlus/>,\r\n        cName: \"nav-text\",\r\n      },\r\n\r\n    ]\r\n\r\n\r\n}\r\n\r\nconst data = SidebarData;\r\nexport  {data};
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/admin/sidebar.js b/src/components/admin/sidebar.js
+--- a/src/components/admin/sidebar.js	
++++ b/src/components/admin/sidebar.js	
+@@ -10,114 +10,130 @@
+ let SidebarData=[];
+ 
+ if(role[0] === token) {
+- SidebarData = [
+-    {
+-      title: "User",
+-      icon: <IoIcons.IoMdPeople/>,
+-      cName: "nav-text",
+-      subNav: [
+-        {
+-          title: "User Management",
+-          path: "/admin/user-management",
+-          icon: <IoIcons.IoIosPaper/>,
+-          cName: "nav-text",
+-        },
+-        {
+-          title: "Staff Management",
+-          path: "/admin/staff-management",
+-          icon: <IoIcons.IoIosPaper/>,
+-          cName: "nav-text",
+-        },
+-      ],
++    SidebarData = [
++        {
++            title: "User",
++            icon: <IoIcons.IoMdPeople/>,
++            cName: "nav-text",
++            subNav: [
++                {
++                    title: "User Management",
++                    path: "/admin/user-management",
++                    icon: <IoIcons.IoIosPaper/>,
++                    cName: "nav-text",
++                },
++                {
++                    title: "Staff Management",
++                    path: "/admin/staff-management",
++                    icon: <IoIcons.IoIosPaper/>,
++                    cName: "nav-text",
++                },
++            ],
+ 
+-    },
+-    {
+-      title: "Conference",
+-      icon: <AiIcons.AiFillHome/>,
+-      cName: "nav-text",
+-      subNav: [
+-        {
+-          title: "Main Conference",
+-          path: "/admin/conference-management",
+-          icon: <IoIcons.IoIosPaper/>,
+-          cName: "nav-text",
+-        },
+-        {
+-          title: "Upcoming Conference",
+-          path: "/admin/upcoming-management",
+-          icon: <IoIcons.IoIosPaper/>,
+-          cName: "nav-text",
+-        },
+-      ],
++        },
++        {
++            title: "Conference",
++            icon: <AiIcons.AiFillHome/>,
++            cName: "nav-text",
++            subNav: [
++                {
++                    title: "Main Conference",
++                    path: "/admin/conference-management",
++                    icon: <IoIcons.IoIosPaper/>,
++                    cName: "nav-text",
++                },
++                {
++                    title: "Upcoming Conference",
++                    path: "/admin/upcoming-management",
++                    icon: <IoIcons.IoIosPaper/>,
++                    cName: "nav-text",
++                },
++            ],
+ 
+-    },
++        },
+ 
+-    {
+-      title: "Template",
+-      icon: <AiIcons.AiFillCodeSandboxSquare/>,
+-      cName: "nav-text",
+-      subNav: [
+-        {
+-          title: "Add Templates",
+-          path: "/admin/add-template",
+-          icon: <IoIcons.IoIosPaper/>,
+-          cName: "nav-text",
+-        },
+-        {
+-          title: "View Templates",
+-          path: "/admin/view-template",
+-          icon: <IoIcons.IoIosPaper/>,
+-          cName: "nav-text",
+-        },
+-      ],
+-    },
++        {
++            title: "Template",
++            icon: <AiIcons.AiFillCodeSandboxSquare/>,
++            cName: "nav-text",
++            subNav: [
++                {
++                    title: "Add Templates",
++                    path: "/admin/add-template",
++                    icon: <IoIcons.IoIosPaper/>,
++                    cName: "nav-text",
++                },
++                {
++                    title: "View Templates",
++                    path: "/admin/view-template",
++                    icon: <IoIcons.IoIosPaper/>,
++                    cName: "nav-text",
++                },
++            ],
++        },
+ 
+-    {
+-      title: "Requests",
+-      path: "/admin/requestmanagement",
+-      icon: <FaIcons.FaCartPlus/>,
+-      cName: "nav-text",
+-    },
++        {
++            title: "Requests",
++            path: "/submissions/pending",
++            icon: <FaIcons.FaCartPlus/>,
++            cName: "nav-text",
++        },
+ 
+-    {
+-      title: "Support",
+-      path: "/admin/supportmanagement",
+-      icon: <FaIcons.FaEnvelopeOpenText/>,
+-      cName: "nav-text",
+-    },
+-  ];
++        {
++            title: "Support",
++            path: "/admin/supportmanagement",
++            icon: <FaIcons.FaEnvelopeOpenText/>,
++            cName: "nav-text",
++        },
++    ];
+ 
+ }
+ else if(role[1] === token) {
+- SidebarData = [
++    SidebarData = [
+         {
+-          title: "Main Conference",
+-          path: "/admin/conference-management",
+-          icon: <IoIcons.IoIosPaper/>,
+-          cName: "nav-text",
++            title: "Main Conference",
++            path: "/admin/conference-management",
++            icon: <IoIcons.IoIosPaper/>,
++            cName: "nav-text",
+         },
+         {
+-          title: "Upcoming Conference",
+-          path: "/admin/upcoming-management",
+-          icon: <IoIcons.IoIosPaper/>,
+-          cName: "nav-text",
++            title: "Upcoming Conference",
++            path: "/admin/upcoming-management",
++            icon: <IoIcons.IoIosPaper/>,
++            cName: "nav-text",
+         },
+-]
++    ]
+ 
+ }
+ if(role[2] === token) {
+- SidebarData = [
+-
+-      {
+-        title: "Requests",
+-        path: "/admin/requestmanagement",
+-        icon: <FaIcons.FaCartPlus/>,
+-        cName: "nav-text",
+-      },
++    SidebarData = [
++        {
++            title: "User",
++            icon: <IoIcons.IoMdPeople/>,
++            cName: "nav-text",
++            subNav: [
++                {
++                    title: "User Management",
++                    path: "/admin/user-management",
++                    icon: <IoIcons.IoIosPaper/>,
++                    cName: "nav-text",
++                },
++                {
++                    title: "Staff Management",
++                    path: "/admin/staff-management",
++                    icon: <IoIcons.IoIosPaper/>,
++                    cName: "nav-text",
++                },
++                {
++                    title: "Requests",
++                    path: "/submissions/pending",
++                    icon: <FaIcons.FaCartPlus/>,
++                    cName: "nav-text",
++                }
+ 
+-    ]
++            ]
+ 
+-
++        }]
+ }
+ 
+ const data = SidebarData;
+Index: src/components/admin/ViewSubmission/ViewSubmission.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, { Component } from \"react\";\r\nimport axios from \"axios\";\r\nimport DocViewer from \"react-doc-viewer\";\r\n\r\nclass ViewSubmission extends Component {\r\n  constructor(props) {\r\n    super(props);\r\n    this.state = {\r\n      submissions: [],\r\n    };\r\n    this.Approve = this.Approve.bind(this);\r\n    this.Decliend = this.Decliend.bind(this);\r\n  }\r\n\r\n  componentDidMount() {\r\n    axios\r\n      .get(`http://localhost:8080/submission/${this.props.match.params.id}`)\r\n      .then((res) => {\r\n        this.setState({ submissions: res.data });\r\n      })\r\n      .catch((err) => {\r\n        console.log(err);\r\n      });\r\n  }\r\n\r\n  Approve() {\r\n    axios\r\n      .patch(\r\n        `http://localhost:8080/submission/approve/${this.props.match.params.id}`\r\n      )\r\n      .then((res) => {\r\n        alert(\"Submission aprroved for the event\");\r\n      })\r\n      .catch((err) => {\r\n        console.log(err);\r\n      });\r\n  }\r\n\r\n  Decliend() {\r\n    axios\r\n      .patch(\r\n        `http://localhost:8080/submission/decline/${this.props.match.params.id}`\r\n      )\r\n      .then((res) => {\r\n        alert(\"Submission Declined for the event\");\r\n      })\r\n      .catch((err) => {\r\n        console.log(err);\r\n      });\r\n  }\r\n\r\n  render() {\r\n    return (\r\n      <div className=\"container mt-3 bg-secondary text-white rounded\">\r\n        <h1>Submission Details:</h1>\r\n\r\n        <h5>Subject : {this.state.submissions.subject}</h5>\r\n        <h5>Description:{this.state.submissions.description}</h5>\r\n        <h5>Submitted Date and Time : {this.state.submissions.date}</h5>\r\n        <div className=\"mt-3 mb-1\">\r\n          <a\r\n            class=\"btn btn-primary mx-2 rounded\"\r\n            href={`http://localhost:8080/submission/download/${this.props.match.params.id}`}\r\n            download\r\n          >\r\n            Download\r\n          </a>\r\n          <button\r\n            type=\"button\"\r\n            class=\"btn btn-success mx-2 rounded\"\r\n            onClick={this.Approve}\r\n          >\r\n            Approve\r\n          </button>\r\n          <button\r\n            type=\"button\"\r\n            class=\"btn btn-danger mx-2 rounded\"\r\n            onClick={this.Decliend}\r\n          >\r\n            Decline\r\n          </button>\r\n        </div>\r\n      </div>\r\n    );\r\n  }\r\n}\r\n\r\nexport default ViewSubmission;\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/admin/ViewSubmission/ViewSubmission.js b/src/components/admin/ViewSubmission/ViewSubmission.js
+--- a/src/components/admin/ViewSubmission/ViewSubmission.js	
++++ b/src/components/admin/ViewSubmission/ViewSubmission.js	
+@@ -1,6 +1,7 @@
+ import React, { Component } from "react";
+ import axios from "axios";
+-import DocViewer from "react-doc-viewer";
++
++
+ 
+ class ViewSubmission extends Component {
+   constructor(props) {
+@@ -14,73 +15,75 @@
+ 
+   componentDidMount() {
+     axios
+-      .get(`http://localhost:8080/submission/${this.props.match.params.id}`)
+-      .then((res) => {
+-        this.setState({ submissions: res.data });
+-      })
+-      .catch((err) => {
+-        console.log(err);
+-      });
++        .get(`http://localhost:8070/api/submissions/${this.props.match.params.id}`)
++        .then((res) => {
++          this.setState({ submissions: res.data });
++        })
++        .catch((err) => {
++          console.log(err);
++        });
+   }
+ 
+   Approve() {
+     axios
+-      .patch(
+-        `http://localhost:8080/submission/approve/${this.props.match.params.id}`
+-      )
+-      .then((res) => {
+-        alert("Submission aprroved for the event");
+-      })
+-      .catch((err) => {
+-        console.log(err);
+-      });
++        .patch(
++            `http://localhost:8070/api/submissions/approve/${this.props.match.params.id}`
++        )
++        .then((res) => {
++          alert("Submission aprroved for the event");
++          window.location = "/submissions/pending"
++        })
++        .catch((err) => {
++          console.log(err);
++        });
+   }
+ 
+   Decliend() {
+     axios
+-      .patch(
+-        `http://localhost:8080/submission/decline/${this.props.match.params.id}`
+-      )
+-      .then((res) => {
+-        alert("Submission Declined for the event");
+-      })
+-      .catch((err) => {
+-        console.log(err);
+-      });
++        .patch(
++            `http://localhost:8070/api/submissions/decline/${this.props.match.params.id}`
++        )
++        .then((res) => {
++          alert("Submission Declined for the event");
++            window.location = "/submissions/pending"
++        })
++        .catch((err) => {
++          console.log(err);
++        });
+   }
+ 
+   render() {
+     return (
+-      <div className="container mt-3 bg-secondary text-white rounded">
+-        <h1>Submission Details:</h1>
++        <div className="container mt-3 bg-secondary text-white rounded">
++          <h1>Submission Details:</h1>
+ 
+-        <h5>Subject : {this.state.submissions.subject}</h5>
+-        <h5>Description:{this.state.submissions.description}</h5>
+-        <h5>Submitted Date and Time : {this.state.submissions.date}</h5>
+-        <div className="mt-3 mb-1">
+-          <a
+-            class="btn btn-primary mx-2 rounded"
+-            href={`http://localhost:8080/submission/download/${this.props.match.params.id}`}
+-            download
+-          >
+-            Download
+-          </a>
+-          <button
+-            type="button"
+-            class="btn btn-success mx-2 rounded"
+-            onClick={this.Approve}
+-          >
+-            Approve
+-          </button>
+-          <button
+-            type="button"
+-            class="btn btn-danger mx-2 rounded"
+-            onClick={this.Decliend}
+-          >
+-            Decline
+-          </button>
+-        </div>
+-      </div>
++          <h5>Subject : {this.state.submissions.subject}</h5>
++          <h5>Description:{this.state.submissions.description}</h5>
++          <h5>Submitted Date and Time : {this.state.submissions.date}</h5>
++          <div className="mt-3 mb-1">
++            <a
++                class="btn btn-primary mx-2 rounded"
++                href={`http://localhost:8070/api/submissions/download/${this.props.match.params.id}`}
++                download
++            >
++              Download
++            </a>
++            <button
++                type="button"
++                class="btn btn-success mx-2 rounded"
++                onClick={this.Approve}
++            >
++              Approve
++            </button>
++            <button
++                type="button"
++                class="btn btn-danger mx-2 rounded"
++                onClick={this.Decliend}
++            >
++              Decline
++            </button>
++          </div>
++        </div>
+     );
+   }
+ }
+Index: src/stylesheets/Video.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>.video-bg{\r\n    width: 100%;\r\n    height: auto;\r\n    position: absolute;\r\n    z-index: -1005;\r\n}\r\n.caption{\r\n    position: relative;\r\n}\r\n.caption h1{\r\n    font-family:sans-serif;\r\n    text-transform:uppercase;\r\n    letter-spacing:5pt;\r\n    font-size: 60px;\r\n    line-height:1.6em;\r\n    font-weight: bolder;\r\n    color: white;\r\n    padding-top: 5%;\r\n\r\n}\r\n.video-container{\r\n    padding-bottom: 100px;\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/stylesheets/Video.css b/src/stylesheets/Video.css
+--- a/src/stylesheets/Video.css	
++++ b/src/stylesheets/Video.css	
+@@ -7,11 +7,11 @@
+ .caption{
+     position: relative;
+ }
+-.caption h1{
++.caption h2{
+     font-family:sans-serif;
+     text-transform:uppercase;
+     letter-spacing:5pt;
+-    font-size: 60px;
++    font-size: 40px;
+     line-height:1.6em;
+     font-weight: bolder;
+     color: white;
+Index: package.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"name\": \"icaf-project\",\r\n  \"version\": \"0.1.0\",\r\n  \"private\": true,\r\n  \"dependencies\": {\r\n    \"@material-ui/core\": \"^4.11.4\",\r\n    \"@material-ui/icons\": \"^4.11.2\",\r\n    \"@material-ui/lab\": \"^4.0.0-alpha.58\",\r\n    \"@testing-library/jest-dom\": \"^5.11.4\",\r\n    \"@testing-library/react\": \"^11.1.0\",\r\n    \"@testing-library/user-event\": \"^12.1.10\",\r\n    \"axios\": \"^0.21.1\",\r\n    \"bootstrap\": \"^4.6.0\",\r\n    \"emailjs\": \"^3.5.0\",\r\n    \"emailjs-com\": \"^3.1.0\",\r\n    \"form-data\": \"^4.0.0\",\r\n    \"formdata-node\": \"^3.5.4\",\r\n    \"react\": \"^17.0.2\",\r\n    \"react-bootstrap\": \"^1.6.1\",\r\n    \"react-bootstrap-dropdown-menu\": \"^1.1.23\",\r\n    \"react-countdown\": \"^2.3.2\",\r\n    \"react-countdown-circle-timer\": \"^2.5.3\",\r\n    \"react-dom\": \"^17.0.2\",\r\n    \"react-icon\": \"^1.0.0\",\r\n    \"react-icons\": \"^4.2.0\",\r\n    \"react-router-dom\": \"^5.2.0\",\r\n    \"react-scripts\": \"^4.0.3\",\r\n    \"styled-components\": \"^5.3.0\",\r\n    \"sweetalert\": \"^2.1.2\",\r\n    \"web-vitals\": \"^1.0.1\"\r\n  },\r\n  \"scripts\": {\r\n    \"start\": \"react-scripts start\",\r\n    \"build\": \"react-scripts build\",\r\n    \"test\": \"react-scripts test\",\r\n    \"eject\": \"react-scripts eject\"\r\n  },\r\n  \"eslintConfig\": {\r\n    \"extends\": [\r\n      \"react-app\",\r\n      \"react-app/jest\"\r\n    ]\r\n  },\r\n  \"browserslist\": {\r\n    \"production\": [\r\n      \">0.2%\",\r\n      \"not dead\",\r\n      \"not op_mini all\"\r\n    ],\r\n    \"development\": [\r\n      \"last 1 chrome version\",\r\n      \"last 1 firefox version\",\r\n      \"last 1 safari version\"\r\n    ]\r\n  },\r\n  \"devDependencies\": {\r\n    \"prettier\": \"2.3.2\"\r\n  }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/package.json b/package.json
+--- a/package.json	
++++ b/package.json	
+@@ -25,6 +25,7 @@
+     "react-icons": "^4.2.0",
+     "react-router-dom": "^5.2.0",
+     "react-scripts": "^4.0.3",
++    "react-select": "^4.3.1",
+     "styled-components": "^5.3.0",
+     "sweetalert": "^2.1.2",
+     "web-vitals": "^1.0.1"
+Index: package-lock.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/package-lock.json b/package-lock.json
+--- a/package-lock.json	
++++ b/package-lock.json	
+@@ -1243,6 +1243,18 @@
+       "resolved": "https://registry.npmjs.org/@csstools/normalize.css/-/normalize.css-10.1.0.tgz",
+       "integrity": "sha512-ij4wRiunFfaJxjB0BdrYHIH8FxBJpOwNPhhAcunlmPdXudL1WQV1qoP9un6JsEBAgQH+7UXyyjh0g7jTxXK6tg=="
+     },
++    "@emotion/cache": {
++      "version": "11.4.0",
++      "resolved": "https://registry.npmjs.org/@emotion/cache/-/cache-11.4.0.tgz",
++      "integrity": "sha512-Zx70bjE7LErRO9OaZrhf22Qye1y4F7iDl+ITjet0J+i+B88PrAOBkKvaAWhxsZf72tDLajwCgfCjJ2dvH77C3g==",
++      "requires": {
++        "@emotion/memoize": "^0.7.4",
++        "@emotion/sheet": "^1.0.0",
++        "@emotion/utils": "^1.0.0",
++        "@emotion/weak-memoize": "^0.2.5",
++        "stylis": "^4.0.3"
++      }
++    },
+     "@emotion/hash": {
+       "version": "0.8.0",
+       "resolved": "https://registry.npmjs.org/@emotion/hash/-/hash-0.8.0.tgz",
+@@ -1261,6 +1273,54 @@
+       "resolved": "https://registry.npmjs.org/@emotion/memoize/-/memoize-0.7.4.tgz",
+       "integrity": "sha512-Ja/Vfqe3HpuzRsG1oBtWTHk2PGZ7GR+2Vz5iYGelAw8dx32K0y7PjVuxK6z1nMpZOqAFsRUPCkK1YjJ56qJlgw=="
+     },
++    "@emotion/react": {
++      "version": "11.4.0",
++      "resolved": "https://registry.npmjs.org/@emotion/react/-/react-11.4.0.tgz",
++      "integrity": "sha512-4XklWsl9BdtatLoJpSjusXhpKv9YVteYKh9hPKP1Sxl+mswEFoUe0WtmtWjxEjkA51DQ2QRMCNOvKcSlCQ7ivg==",
++      "requires": {
++        "@babel/runtime": "^7.13.10",
++        "@emotion/cache": "^11.4.0",
++        "@emotion/serialize": "^1.0.2",
++        "@emotion/sheet": "^1.0.1",
++        "@emotion/utils": "^1.0.0",
++        "@emotion/weak-memoize": "^0.2.5",
++        "hoist-non-react-statics": "^3.3.1"
++      },
++      "dependencies": {
++        "@babel/runtime": {
++          "version": "7.14.6",
++          "resolved": "https://registry.npmjs.org/@babel/runtime/-/runtime-7.14.6.tgz",
++          "integrity": "sha512-/PCB2uJ7oM44tz8YhC4Z/6PeOKXp4K588f+5M3clr1M4zbqztlo0XEfJ2LEzj/FgwfgGcIdl8n7YYjTCI0BYwg==",
++          "requires": {
++            "regenerator-runtime": "^0.13.4"
++          }
++        }
++      }
++    },
++    "@emotion/serialize": {
++      "version": "1.0.2",
++      "resolved": "https://registry.npmjs.org/@emotion/serialize/-/serialize-1.0.2.tgz",
++      "integrity": "sha512-95MgNJ9+/ajxU7QIAruiOAdYNjxZX7G2mhgrtDWswA21VviYIRP1R5QilZ/bDY42xiKsaktP4egJb3QdYQZi1A==",
++      "requires": {
++        "@emotion/hash": "^0.8.0",
++        "@emotion/memoize": "^0.7.4",
++        "@emotion/unitless": "^0.7.5",
++        "@emotion/utils": "^1.0.0",
++        "csstype": "^3.0.2"
++      },
++      "dependencies": {
++        "csstype": {
++          "version": "3.0.8",
++          "resolved": "https://registry.npmjs.org/csstype/-/csstype-3.0.8.tgz",
++          "integrity": "sha512-jXKhWqXPmlUeoQnF/EhTtTl4C9SnrxSH/jZUih3jmO6lBKr99rP3/+FmrMj4EFpOXzMtXHAZkd3x0E6h6Fgflw=="
++        }
++      }
++    },
++    "@emotion/sheet": {
++      "version": "1.0.1",
++      "resolved": "https://registry.npmjs.org/@emotion/sheet/-/sheet-1.0.1.tgz",
++      "integrity": "sha512-GbIvVMe4U+Zc+929N1V7nW6YYJtidj31lidSmdYcWozwoBIObXBnaJkKNDjZrLm9Nc0BR+ZyHNaRZxqNZbof5g=="
++    },
+     "@emotion/stylis": {
+       "version": "0.8.5",
+       "resolved": "https://registry.npmjs.org/@emotion/stylis/-/stylis-0.8.5.tgz",
+@@ -1271,6 +1331,16 @@
+       "resolved": "https://registry.npmjs.org/@emotion/unitless/-/unitless-0.7.5.tgz",
+       "integrity": "sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg=="
+     },
++    "@emotion/utils": {
++      "version": "1.0.0",
++      "resolved": "https://registry.npmjs.org/@emotion/utils/-/utils-1.0.0.tgz",
++      "integrity": "sha512-mQC2b3XLDs6QCW+pDQDiyO/EdGZYOygE8s5N5rrzjSI4M3IejPE/JPndCBwRT9z982aqQNi6beWs1UeayrQxxA=="
++    },
++    "@emotion/weak-memoize": {
++      "version": "0.2.5",
++      "resolved": "https://registry.npmjs.org/@emotion/weak-memoize/-/weak-memoize-0.2.5.tgz",
++      "integrity": "sha512-6U71C2Wp7r5XtFtQzYrW5iKFT67OixrSxjI4MptCHzdSVlgabczzqLe0ZSgnub/5Kp4hSbpDB1tMytZY9pwxxA=="
++    },
+     "@eslint/eslintrc": {
+       "version": "0.3.0",
+       "resolved": "https://registry.npmjs.org/@eslint/eslintrc/-/eslintrc-0.3.0.tgz",
+@@ -9131,6 +9201,11 @@
+       "resolved": "https://registry.npmjs.org/media-typer/-/media-typer-0.3.0.tgz",
+       "integrity": "sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g="
+     },
++    "memoize-one": {
++      "version": "5.2.1",
++      "resolved": "https://registry.npmjs.org/memoize-one/-/memoize-one-5.2.1.tgz",
++      "integrity": "sha512-zYiwtZUcYyXKo/np96AGZAckk+FWWsUdJ3cHGGmld7+AhvcWmQyGCYUh1hc4Q/pkOhb65dQR/pqCyK0cOaHz4Q=="
++    },
+     "memory-fs": {
+       "version": "0.4.1",
+       "resolved": "https://registry.npmjs.org/memory-fs/-/memory-fs-0.4.1.tgz",
+@@ -11802,6 +11877,14 @@
+       "resolved": "https://registry.npmjs.org/react-icons/-/react-icons-4.2.0.tgz",
+       "integrity": "sha512-rmzEDFt+AVXRzD7zDE21gcxyBizD/3NqjbX6cmViAgdqfJ2UiLer8927/QhhrXQV7dEj/1EGuOTPp7JnLYVJKQ=="
+     },
++    "react-input-autosize": {
++      "version": "3.0.0",
++      "resolved": "https://registry.npmjs.org/react-input-autosize/-/react-input-autosize-3.0.0.tgz",
++      "integrity": "sha512-nL9uS7jEs/zu8sqwFE5MAPx6pPkNAriACQ2rGLlqmKr2sPGtN7TXTyDdQt4lbNXVx7Uzadb40x8qotIuru6Rhg==",
++      "requires": {
++        "prop-types": "^15.5.8"
++      }
++    },
+     "react-is": {
+       "version": "17.0.2",
+       "resolved": "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz",
+@@ -11959,6 +12042,20 @@
+         "workbox-webpack-plugin": "5.1.4"
+       }
+     },
++    "react-select": {
++      "version": "4.3.1",
++      "resolved": "https://registry.npmjs.org/react-select/-/react-select-4.3.1.tgz",
++      "integrity": "sha512-HBBd0dYwkF5aZk1zP81Wx5UsLIIT2lSvAY2JiJo199LjoLHoivjn9//KsmvQMEFGNhe58xyuOITjfxKCcGc62Q==",
++      "requires": {
++        "@babel/runtime": "^7.12.0",
++        "@emotion/cache": "^11.4.0",
++        "@emotion/react": "^11.1.1",
++        "memoize-one": "^5.0.0",
++        "prop-types": "^15.6.0",
++        "react-input-autosize": "^3.0.0",
++        "react-transition-group": "^4.3.0"
++      }
++    },
+     "react-transition-group": {
+       "version": "4.4.1",
+       "resolved": "https://registry.npmjs.org/react-transition-group/-/react-transition-group-4.4.1.tgz",
+@@ -13617,6 +13714,11 @@
+         }
+       }
+     },
++    "stylis": {
++      "version": "4.0.10",
++      "resolved": "https://registry.npmjs.org/stylis/-/stylis-4.0.10.tgz",
++      "integrity": "sha512-m3k+dk7QeJw660eIKRRn3xPF6uuvHs/FFzjX3HQ5ove0qYsiygoAhwn5a3IYKaZPo5LrYD0rfVmtv1gNY1uYwg=="
++    },
+     "supports-color": {
+       "version": "7.2.0",
+       "resolved": "https://registry.npmjs.org/supports-color/-/supports-color-7.2.0.tgz",
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"0e4a851c-d203-4733-bb69-e82355c6b896\" name=\"Default Changelist\" comment=\"Avatar drop down!\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Routes/mainRoutes.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Routes/mainRoutes.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/Guest Pages/Home/Home.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/components/Guest Pages/Home/Home.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/components/Header/Vid.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/components/Guest Pages/Home/SubHome/Vid.js\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1ug6wuEcvLgMVyA53giurpnPNvy\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"ASKED_ADD_EXTERNAL_FILES\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\r\n    <property name=\"node.js.detected.package.eslint\" value=\"true\" />\r\n    <property name=\"node.js.detected.package.standard\" value=\"true\" />\r\n    <property name=\"node.js.path.for.package.eslint\" value=\"project\" />\r\n    <property name=\"node.js.selected.package.eslint\" value=\"(autodetect)\" />\r\n    <property name=\"node.js.selected.package.standard\" value=\"\" />\r\n    <property name=\"nodejs_package_manager_path\" value=\"npm\" />\r\n    <property name=\"prettierjs.PrettierConfiguration.Package\" value=\"E:\\Application Frameworks\\Frontend\\node_modules\\prettier\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"project.propVCSSupport.Mappings\" />\r\n    <property name=\"ts.external.directory.path\" value=\"C:\\Program Files\\JetBrains\\WebStorm 2020.3.2\\plugins\\JavaScriptLanguage\\jsLanguageServicesImpl\\external\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"E:\\Application Frameworks\\Frontend\\src\\components\\Guest Pages\\Home\\SubHome\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"0e4a851c-d203-4733-bb69-e82355c6b896\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1625075126450</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1625075126450</updated>\r\n      <workItem from=\"1625075129628\" duration=\"147000\" />\r\n      <workItem from=\"1625075594031\" duration=\"1300000\" />\r\n      <workItem from=\"1625077677347\" duration=\"168000\" />\r\n      <workItem from=\"1625080969010\" duration=\"72000\" />\r\n      <workItem from=\"1625081074317\" duration=\"52000\" />\r\n      <workItem from=\"1625134898678\" duration=\"12812000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"add few new files and folders!!\">\r\n      <created>1625075201318</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1625075201318</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"add test\">\r\n      <created>1625077784145</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1625077784145</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Login!\">\r\n      <created>1625138571568</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1625138571568</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"navigation working!\">\r\n      <created>1625141943021</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1625141943021</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Login working!\">\r\n      <created>1625144509695</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1625144509695</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Avatar drop down!\">\r\n      <created>1625148245837</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1625148245837</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"7\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"add few new files and folders!!\" />\r\n    <MESSAGE value=\"add test\" />\r\n    <MESSAGE value=\"Login!\" />\r\n    <MESSAGE value=\"navigation working!\" />\r\n    <MESSAGE value=\"Login working!\" />\r\n    <MESSAGE value=\"Avatar drop down!\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Avatar drop down!\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -1,11 +1,22 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="ChangeListManager">
+-    <list default="true" id="0e4a851c-d203-4733-bb69-e82355c6b896" name="Default Changelist" comment="Avatar drop down!">
++    <list default="true" id="0e4a851c-d203-4733-bb69-e82355c6b896" name="Default Changelist" comment="Video Added!">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/Routes/mainRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes/mainRoutes.js" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/components/Guest Pages/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Guest Pages/Home/Home.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/components/Header/Vid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Guest Pages/Home/SubHome/Vid.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/Guest Pages/Home/SubHome/Desc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Guest Pages/Home/SubHome/Desc.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/Guest Pages/Home/SubHome/Vid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Guest Pages/Home/SubHome/Vid.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/Header/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/NavBar.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/Users/Add Submission/AddSubmission.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Add Submission/AddSubmission.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/admin/Conference Management/Upcoming/AddUpConference.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/Conference Management/Upcoming/AddUpConference.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/admin/Conference Management/Upcoming/ConferenceManagement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/Conference Management/Upcoming/ConferenceManagement.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/admin/PendingSubmissions/PendingSubmissions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/PendingSubmissions/PendingSubmissions.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/admin/ViewSubmission/ViewSubmission.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/ViewSubmission/ViewSubmission.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/components/admin/sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/sidebar.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/stylesheets/Video.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/stylesheets/Video.css" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -56,7 +67,7 @@
+       <workItem from="1625077677347" duration="168000" />
+       <workItem from="1625080969010" duration="72000" />
+       <workItem from="1625081074317" duration="52000" />
+-      <workItem from="1625134898678" duration="12812000" />
++      <workItem from="1625134898678" duration="23651000" />
+     </task>
+     <task id="LOCAL-00001" summary="add few new files and folders!!">
+       <created>1625075201318</created>
+@@ -100,7 +111,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1625148245837</updated>
+     </task>
+-    <option name="localTasksCounter" value="7" />
++    <task id="LOCAL-00007" summary="Video Added!">
++      <created>1625148805463</created>
++      <option name="number" value="00007" />
++      <option name="presentableId" value="LOCAL-00007" />
++      <option name="project" value="LOCAL" />
++      <updated>1625148805463</updated>
++    </task>
++    <option name="localTasksCounter" value="8" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -125,6 +143,7 @@
+     <MESSAGE value="navigation working!" />
+     <MESSAGE value="Login working!" />
+     <MESSAGE value="Avatar drop down!" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Avatar drop down!" />
++    <MESSAGE value="Video Added!" />
++    <option name="LAST_COMMIT_MESSAGE" value="Video Added!" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/components/admin/Conference Management/Upcoming/AddUpConference.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, { useEffect, useState } from \"react\";\r\nimport { Card, Container, Form, Table } from \"react-bootstrap\";\r\nimport { useHistory } from \"react-router-dom\";\r\nimport FormData from \"form-data\";\r\nimport axios from \"axios\";\r\nimport swal from \"sweetalert\";\r\nimport { Button } from \"@material-ui/core\";\r\n\r\nfunction AddUpConference() {\r\n  const [CTitle, setCTitle] = useState(\"\");\r\n  const [Description, setDescription] = useState(\"\");\r\n  const [Venue, setVenue] = useState(\"\");\r\n  const [Date, setDate] = useState(\"\");\r\n  const [Seats, setSeats] = useState(\"\");\r\n  const Status = \"Upcoming\";\r\n\r\n  const history = useHistory();\r\n\r\n  function sendData(event) {\r\n    event.preventDefault();\r\n    const formData = new FormData();\r\n    formData.append(\"ConferenceTitle\", CTitle);\r\n    formData.append(\"Description\", Description);\r\n    formData.append(\"Venue\", Venue);\r\n    formData.append(\"Date\", Date);\r\n    formData.append(\"Seats\", Seats);\r\n    formData.append(\"Status\", Status);\r\n\r\n    console.log(formData);\r\n    axios\r\n      .post(\"http://localhost:8070/api/conference/addupconference\", formData)\r\n      .then((response) => {\r\n        swal({\r\n          title: \"Success\",\r\n          text: \"Successfully added a conference\",\r\n          icon: \"success\",\r\n          SuccessMode: true,\r\n        }).then((willDelete) => {\r\n          history.push(\"/\");\r\n        });\r\n      })\r\n      .catch((err) => {\r\n        alert(err);\r\n      });\r\n  }\r\n\r\n  return (\r\n    <Container>\r\n      <Card className={\"p-4 mb-3\"}>\r\n        <h1 className=\"text-center sub-titles \">ADD UPCOMING CONFERENCE</h1>\r\n        <hr />\r\n        <Form>\r\n          <Form.Group className=\"mb-3\" controlId=\"ConferenceTitle\">\r\n            <Form.Label>Conference Title</Form.Label>\r\n            <Form.Control\r\n              name=\"ConferenceTitle\"\r\n              onChange={(event) => {\r\n                setCTitle(event.target.value);\r\n              }}\r\n              type=\"text\"\r\n              placeholder=\"Conference Title\"\r\n            />\r\n          </Form.Group>\r\n          <Form.Group className=\"mb-3\" controlId=\"Description\">\r\n            <Form.Label>Description</Form.Label>\r\n            <Form.Control\r\n              name=\"Description\"\r\n              onChange={(event) => {\r\n                setDescription(event.target.value);\r\n              }}\r\n              as=\"textarea\"\r\n              rows={3}\r\n            />\r\n          </Form.Group>\r\n          <Form.Group className=\"mb-3\" controlId=\"Venue\">\r\n            <Form.Label>Venue</Form.Label>\r\n            <Form.Control\r\n              name=\"Venue\"\r\n              onChange={(event) => {\r\n                setVenue(event.target.value);\r\n              }}\r\n              type=\"text\"\r\n              placeholder=\"Venue\"\r\n            />\r\n          </Form.Group>\r\n          <Form.Group className=\"mb-3\" controlId=\"Seats\">\r\n            <Form.Label>No of Seats</Form.Label>\r\n            <Form.Control\r\n              name=\"Seats\"\r\n              onChange={(event) => {\r\n                setSeats(event.target.value);\r\n              }}\r\n              type=\"number\"\r\n              placeholder=\"Normal text\"\r\n            />\r\n          </Form.Group>\r\n          <Form.Group className=\"mb-3\" controlId=\"Date\">\r\n            <Form.Label>Date</Form.Label>\r\n            <Form.Control\r\n              name=\"Date\"\r\n              onChange={(event) => {\r\n                setDate(event.target.value);\r\n              }}\r\n              type=\"date\"\r\n            />\r\n          </Form.Group>\r\n          <Button\r\n            onClick={(event) => {\r\n              sendData(event);\r\n            }}\r\n            type=\"submit\"\r\n            fullWidth\r\n            variant=\"contained\"\r\n            color={\"primary\"}\r\n          >\r\n            {\" \"}\r\n            Submit\r\n          </Button>\r\n        </Form>\r\n      </Card>\r\n    </Container>\r\n  );\r\n}\r\n\r\nexport default AddUpConference;\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/admin/Conference Management/Upcoming/AddUpConference.js b/src/components/admin/Conference Management/Upcoming/AddUpConference.js
+--- a/src/components/admin/Conference Management/Upcoming/AddUpConference.js	
++++ b/src/components/admin/Conference Management/Upcoming/AddUpConference.js	
+@@ -12,23 +12,23 @@
+   const [Venue, setVenue] = useState("");
+   const [Date, setDate] = useState("");
+   const [Seats, setSeats] = useState("");
+-  const Status = "Upcoming";
+ 
+   const history = useHistory();
+ 
+   function sendData(event) {
+     event.preventDefault();
+-    const formData = new FormData();
+-    formData.append("ConferenceTitle", CTitle);
+-    formData.append("Description", Description);
+-    formData.append("Venue", Venue);
+-    formData.append("Date", Date);
+-    formData.append("Seats", Seats);
+-    formData.append("Status", Status);
+ 
+-    console.log(formData);
++    const condata ={
++      con_title: CTitle,
++      description: Description,
++      venue: Venue,
++      seats: Seats,
++      date: Date,
++    }
++
++   console.log(condata);
+     axios
+-      .post("http://localhost:8070/api/conference/addupconference", formData)
++      .post("http://localhost:8070/api/conferences/add", condata)
+       .then((response) => {
+         swal({
+           title: "Success",
+@@ -46,7 +46,7 @@
+ 
+   return (
+     <Container>
+-      <Card className={"p-4 mb-3"}>
++      <Card className={"p-4 mt-3 mb-3"}>
+         <h1 className="text-center sub-titles ">ADD UPCOMING CONFERENCE</h1>
+         <hr />
+         <Form>
+Index: src/components/Guest Pages/Home/SubHome/Desc.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from 'react';\r\nimport {Container} from \"react-bootstrap\";\r\nimport {Paper} from \"@material-ui/core\";\r\n\r\nfunction Desc() {\r\n    return (\r\n       <Container>\r\n        <div  className={\"justify-content-center text-center \"}>\r\n            <h3 style={{\r\n                fontSize: \"25px\",\r\n                letterSpacing: \"2pt\",\r\n                fontStyle:\"italic\"\r\n            }}>Conference Title</h3>\r\n            <p>\r\n                The 3rd International conference on advancements in computing -2021 (ICAC2021) is organized by the Faculty of Computing of the Sri Lanka Institute of Information Technology (SLIIT) as an open forum for academics along with industry professionals to present the latest findings and research output and practical deployments in the Computer Science and Information Technology domains. Primary objective of the ICAC is to uplift the research culture and the quality of research done by Sri Lankan researchers. This conference will create a platform for national and international researchers to showcase their research output, networking opportunities to discuss innovative ideas, and initiate collaborative work. ICAC 2019 and ICAC 2020 were successfully conducted with a technical co-sponsorship by IEEE Sri Lanka Section and all publications are available in IEEE Xplore digital library\r\n            </p>\r\n\r\n        </div>\r\n       </Container>\r\n    );\r\n}\r\n\r\nexport default Desc;
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/components/Guest Pages/Home/SubHome/Desc.js b/src/components/Guest Pages/Home/SubHome/Desc.js
+--- a/src/components/Guest Pages/Home/SubHome/Desc.js	
++++ b/src/components/Guest Pages/Home/SubHome/Desc.js	
+@@ -1,21 +1,38 @@
+-import React from 'react';
++import React, {useEffect, useState} from 'react';
+ import {Container} from "react-bootstrap";
+ import {Paper} from "@material-ui/core";
++import axios from "axios";
+ 
+ function Desc() {
++    const [conferences, setConferences] = useState([]);
++    useEffect(() => {
++        axios
++            .get("http://localhost:8070/api/conferences/main")
++            .then((res) => {
++                console.log(res);
++                setConferences(res.data);
++            })
++            .catch((err) => {
++                console.log(err);
++            });
++    },[]);
+     return (
++
+        <Container>
++           { conferences.map((conference, index) => {
++               return(
+         <div  className={"justify-content-center text-center "}>
++
+             <h3 style={{
+                 fontSize: "25px",
+                 letterSpacing: "2pt",
+                 fontStyle:"italic"
+-            }}>Conference Title</h3>
++            }}>{conference.con_title}</h3>
+             <p>
+-                The 3rd International conference on advancements in computing -2021 (ICAC2021) is organized by the Faculty of Computing of the Sri Lanka Institute of Information Technology (SLIIT) as an open forum for academics along with industry professionals to present the latest findings and research output and practical deployments in the Computer Science and Information Technology domains. Primary objective of the ICAC is to uplift the research culture and the quality of research done by Sri Lankan researchers. This conference will create a platform for national and international researchers to showcase their research output, networking opportunities to discuss innovative ideas, and initiate collaborative work. ICAC 2019 and ICAC 2020 were successfully conducted with a technical co-sponsorship by IEEE Sri Lanka Section and all publications are available in IEEE Xplore digital library
++                {conference.description}
+             </p>
+ 
+-        </div>
++        </div> )})}
+        </Container>
+     );
+ }

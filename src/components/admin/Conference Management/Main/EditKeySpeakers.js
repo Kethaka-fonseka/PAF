@@ -1,86 +1,104 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { Card, Container, Form } from "react-bootstrap";
 import { Button } from "@material-ui/core";
+import axios from "axios";
+import swal from "sweetalert";
+import {useHistory} from "react-router-dom";
 
-function EditKeySpeakers() {
+function EditKeySpeakers(props) {
+  const [image, setImage] = useState([]);
+  const [name, setName] = useState([]);
+  const [description, setDescription] = useState([]);
+
+  function onChangeImage(e) {
+    setImage(e.target.files[0]);
+  }
+
+  const history = useHistory();
+
+  function AddSpeaker(e) {
+
+      e.preventDefault();
+      const data = new FormData();
+      data.append("image", image);
+      data.append("name", name );
+      data.append("description",description );
+      data.append("conference", props.match.params.id );
+      console.log(data);
+      axios
+          .post("http://localhost:8070/api/speakers/add",data)
+          .then((res) => {
+              swal({
+                  title: "Success",
+                  text: "Do you want to add more",
+                  icon: "success",
+                  SuccessMode: true,
+              }).then((willDelete) => {
+                  history.push("/admin/add-images");
+              });
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+    }
+
+
   return (
-    <div>
-      <Container>
-        <Card className={"p-4 mb-3"}>
-          <h1 className="text-center sub-titles ">ADD UPCOMING CONFERENCE</h1>
-          <hr />
-          <Form>
-            <Form.Group className="mb-3" controlId="ConferenceTitle">
-              <Form.Label>Conference Title</Form.Label>
-              <Form.Control
-                name="ConferenceTitle"
-                onChange={(event) => {
-                  // setCTitle(event.target.value);
-                }}
-                type="text"
-                placeholder="Conference Title"
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="Description">
-              <Form.Label>Description</Form.Label>
-              <Form.Control
-                name="Description"
-                onChange={(event) => {
-                  // setDescription(event.target.value);
-                }}
-                as="textarea"
-                rows={3}
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="Venue">
-              <Form.Label>Venue</Form.Label>
-              <Form.Control
-                name="Venue"
-                onChange={(event) => {
-                  // setVenue(event.target.value);
-                }}
-                type="text"
-                placeholder="Venue"
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="Seats">
-              <Form.Label>No of Seats</Form.Label>
-              <Form.Control
-                name="Seats"
-                onChange={(event) => {
-                  // setSeats(event.target.value);
-                }}
-                type="number"
-                placeholder="Normal text"
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="Date">
-              <Form.Label>Date</Form.Label>
-              <Form.Control
-                name="Date"
-                onChange={(event) => {
-                  // setDate(event.target.value);
-                }}
-                type="date"
-              />
-            </Form.Group>
-            <Button
-              onClick={(event) => {
-                // sendData(event);
-              }}
-              type="submit"
-              fullWidth
-              variant="contained"
-              color={"primary"}
-            >
-              {" "}
-              Submit
-            </Button>
-          </Form>
-        </Card>
-      </Container>
-    </div>
-  );
-}
+      <div>
+        <Container className={"mt-4"} >
 
+            <Card className={'p-4'}>
+                <h1 className={"sub-titles text-center"}> ADD SPEAKERS FOR CURRENT MAIN EVENT</h1>
+                <hr/>
+          <Form>
+            <div className="mb-3">
+              <label htmlFor="subject" className="form-label">
+                Name:
+              </label>
+              <input
+                  type="text"
+                  className="form-control"
+                  id="subject"
+                  name="name"
+                  onChange={(event) => {
+                    setName(event.target.value);
+                  }}
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="subject" className="form-label">
+                Description:
+              </label>
+              <input
+                  type="text"
+                  className="form-control"
+                  id="subject"
+                  name="description"
+                  onChange={(event) => {
+                    setDescription(event.target.value);
+                  }}
+              />
+            </div>
+          <div className="mb-3">
+            <label htmlFor="file" className="form-label">
+              Select Image:
+            </label>
+            <input
+                className="form-control"
+                type="file"
+                name="image"
+                id="file"
+                accept=''
+                onChange={onChangeImage}
+            />
+          </div>
+
+            <Button fullWidth variant={"contained"} color={"primary"} onClick={AddSpeaker}>Submit</Button>
+          </Form>
+            </Card>
+        </Container>
+      </div>
+  );
+
+}
 export default EditKeySpeakers;
