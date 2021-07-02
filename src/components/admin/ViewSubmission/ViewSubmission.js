@@ -18,7 +18,6 @@ class ViewSubmission extends Component {
       .get(`http://localhost:8070/api/submissions/${this.props.match.params.id}`)
       .then((res) => {
         this.setState({ submissions: res.data });
-        window.location ="/submissions/pending"
       })
       .catch((err) => {
         console.log(err);
@@ -46,6 +45,7 @@ class ViewSubmission extends Component {
       )
       .then((res) => {
         alert("Submission Declined for the event");
+        window.location ="/submissions/pending"
       })
       .catch((err) => {
         console.log(err);

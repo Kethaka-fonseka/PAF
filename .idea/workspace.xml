@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e4a851c-d203-4733-bb69-e82355c6b896" name="Default Changelist" comment="CFAdded!">
+    <list default="true" id="0e4a851c-d203-4733-bb69-e82355c6b896" name="Default Changelist" comment="conference - submission flow!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Routes/adminRoutes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Routes/mainRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Routes/mainRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Routes/userRoutes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Guest Pages/Authentications/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Guest Pages/Authentications/Login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Guest Pages/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Guest Pages/Home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Guest Pages/Home/SubHome/Vid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Guest Pages/Home/SubHome/Vid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/NavBar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Users/Add Submission/AddSubmission.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Add Submission/AddSubmission.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/Submissions/Submission.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Submissions/Submission.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Users/Submissions/Submissions..js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Users/Submissions/PaymentButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/Conference Management/Upcoming/AddUpConference.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/Conference Management/Upcoming/AddUpConference.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin/Conference Management/Upcoming/ConferenceManagement.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/Conference Management/Upcoming/ConferenceManagement.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/admin/ViewSubmission/ViewSubmission.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin/ViewSubmission/ViewSubmission.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +37,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/stylesheets" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -41,7 +50,11 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Application Frameworks\Frontend\src\stylesheets" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Application Frameworks\Frontend\src\components\Users" />
       <recent name="E:\Application Frameworks\Frontend\src\components\Guest Pages\Home\SubHome" />
     </key>
   </component>
@@ -60,7 +73,7 @@
       <workItem from="1625081074317" duration="52000" />
       <workItem from="1625134898678" duration="12812000" />
       <workItem from="1625148913323" duration="6032000" />
-      <workItem from="1625171140077" duration="3374000" />
+      <workItem from="1625171140077" duration="21515000" />
     </task>
     <task id="LOCAL-00001" summary="add few new files and folders!!">
       <created>1625075201318</created>
@@ -118,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1625169997402</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="conference - submission flow!">
+      <created>1625174625044</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1625174625044</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,6 +165,7 @@
     <MESSAGE value="Avatar drop down!" />
     <MESSAGE value="donse few changes in project" />
     <MESSAGE value="CFAdded!" />
-    <option name="LAST_COMMIT_MESSAGE" value="CFAdded!" />
+    <MESSAGE value="conference - submission flow!" />
+    <option name="LAST_COMMIT_MESSAGE" value="conference - submission flow!" />
   </component>
 </project>

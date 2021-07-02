@@ -29,6 +29,8 @@ import ViewTemplates from "../components/admin/Template Managment/ViewTemplates"
 import AddSubmission from "../components/Users/Add Submission/AddSubmission";
 import PendingSubmissions from "../components/admin/PendingSubmissions/PendingSubmissions";
 import ViewSubmission from "../components/admin/ViewSubmission/ViewSubmission";
+import Submission from "../components/Users/Submissions/Submission";
+import Payment from "../components/Users/Payment";
 
 
 
@@ -69,6 +71,14 @@ function MainRoutes() {
         {/*Sandaruwan start*/}
         <Route path='/admin/supportmanagement' component={SupportManagment} />
 
+        <Route
+            path='/payment'
+            component={Payment}
+        />
+        <Route
+            path='/payment/:e'
+            component={Payment}
+        />
         <Route path='/admin/staff-management' component={StaffManagement} />
         <Route
           path='/admin/staffmanagement/addmembers'
@@ -102,6 +112,7 @@ function MainRoutes() {
           component={ContactUsers}
         />
     <Route  path="/submissions/add" component={AddSubmission}/>
+        <Route  path="/user/submissions" component={Submission}/>
     <Route  path="/submissions/pending" component={PendingSubmissions}/>
     <Route  path="/submissions/view/:id" component={ViewSubmission}/>
 

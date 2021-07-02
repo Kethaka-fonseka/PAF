@@ -16,6 +16,8 @@ class AddSubmission extends Component {
         { value: "researcher", label: "researcher" },
       ],
       role: "",
+      conference: localStorage.getItem('con_id'),
+      user: localStorage.getItem('userid')
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -33,6 +35,9 @@ class AddSubmission extends Component {
     data.append("description", this.state.description);
     data.append("role", this.state.role);
     data.append("file", this.state.file);
+    data.append("conference", this.state.conference);
+    data.append("user", this.state.user);
+
     axios
       .post("http://localhost:8070/api/submissions/create", data)
       .then((res) => {

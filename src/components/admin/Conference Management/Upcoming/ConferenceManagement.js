@@ -34,33 +34,50 @@ function ConferenceManagement() {
       .delete(`http://localhost:8070/api/conferences/${id}`)
       .then((res) => {
         alert("Deleted");
+        setDeleted(true)
       })
       .catch((err) => {
         alert(err);
       });
   }
-  function checkEligibility() {
+  function checkEligibility(id) {
 
     axios
         .get(`http://localhost:8070/api/conferences/main`)
         .then((res) => {
           console.log(res);
-          setMain(res.data)
-
+          setMain(res.data);
+          if(main.length != 0){
+              alert("There can't be two main events, Please close current main event!")
+          }else{
+              if(main[0]._id != null)
+              {
+                  alert("There can be only one main event!");
+              }else{
+                  makeMain(id);
+              }
+          }
         })
         .catch((err) => {
           console.log(err);
         });
   }
+function makeMain(id){
+    console.log(id);
+  axios
+      .patch(`http://localhost:8070/api/conferences/${id}`)
+      .then((res) => {
+        console.log(res);
+         alert("Successful");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
 
+}
   return (
     <Container fluid>
-      {/*{conferences.map((conference,index) =>{*/}
-      {/*  return (*/}
-      {/*      <>*/}
-      {/*      </>*/}
-      {/*  )*/}
-      {/*})}*/}
+
       <Card className={"p-4"}>
         <h1 className="text-center sub-titles ">Upcoming Events</h1>
         <hr />
@@ -100,7 +117,7 @@ function ConferenceManagement() {
                     color="success"
                     size="small"
 
-                    onClick={deleteConferences.bind(conference._id)}
+                    onClick={deleteConferences.bind(this,conference._id)}
                   >
                     Delete
                   </Button>
@@ -112,7 +129,7 @@ function ConferenceManagement() {
                     color="secondary"
                     startIcon={<CheckIcon />}
                     size="small"
-                    onClick={checkEligibility}
+                    onClick={checkEligibility.bind(this,conference._id)}
                   >
                     Activate
                   </Button>

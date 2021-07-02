@@ -11,13 +11,15 @@ function NavBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
+  const username =  localStorage.getItem("userid");
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
   const handleClose = () => {
     setAnchorEl(null);
-    window.location="/submissions/add";
+    window.location="/user/submissions";
   };
 
   function Logout() {
@@ -25,6 +27,8 @@ function NavBar() {
       .get("http://localhost:8070/auth/logout")
       .then((response) => {
         localStorage.removeItem("user");
+        localStorage.removeItem("userid");
+        localStorage.removeItem("icon_id");
 
         window.location.href = "/";
       })
@@ -84,7 +88,7 @@ style={{marginTop: "40px"}}
               <MenuItem onClick={Logout}>Logout</MenuItem>
             </Menu>
 
-         <Typography className={"pl-2"} style={{ color: "white"}} variant={"subtitle1"} > Username</Typography>
+         <Typography className={"pl-2"} style={{ color: "white"}} variant={"subtitle1"} > {username}</Typography>
           {/*<Button className='mr-sm-2' onClick={Logout} variant='outline-light'>*/}
           {/*  Logout*/}
           {/*</Button>{" "}*/}

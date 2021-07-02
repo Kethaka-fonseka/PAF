@@ -15,13 +15,17 @@ function Home() {
         axios
             .get(`http://localhost:8070/api/conferences/main`)
             .then((res) => {
-                console.log(res);
+                console.log(res.data);
                 setConferences(res.data);
+                localStorage.setItem("con_id",conferences[0]._id);
+                localStorage.setItem("participant_fee",conferences[0].researcher_fee);
+                localStorage.setItem("researcher_fee",conferences[0].participant_fee);
+                console.log(conferences[0].participant_fee);
             })
             .catch((err) => {
                 console.log(err);
             });
-    },[]);
+    },[2]);
     return (
         <div >
             {conferences.map((conference,index) =>{

@@ -12,6 +12,8 @@ function AddUpConference() {
   const [Venue, setVenue] = useState("");
   const [Date, setDate] = useState("");
   const [Seats, setSeats] = useState("");
+  const [ResearcherFee, setResearcherFee] = useState(0);
+  const [ParticipantsFee, setParticipantsFee] = useState(0);
 
 
   const history = useHistory();
@@ -25,6 +27,9 @@ function AddUpConference() {
      venue: Venue,
      seats: Seats,
      date: Date,
+     researcher_fee:ResearcherFee,
+     participant_fee:ParticipantsFee,
+
    }
     console.log(conData);
     axios
@@ -45,7 +50,7 @@ function AddUpConference() {
   }
 
   return (
-    <Container>
+    <Container className={"pt-3"}>
 
       <Card className={"p-4 mb-3"}>
         <h1 className="text-center sub-titles ">ADD UPCOMING CONFERENCE</h1>
@@ -84,6 +89,16 @@ function AddUpConference() {
               placeholder="Venue"
             />
           </Form.Group>
+          <Form.Group className="mb-3" controlId="Date">
+            <Form.Label>Date</Form.Label>
+            <Form.Control
+                name="Date"
+                onChange={(event) => {
+                  setDate(event.target.value);
+                }}
+                type="date"
+            />
+          </Form.Group>
           <Form.Group className="mb-3" controlId="Seats">
             <Form.Label>No of Seats</Form.Label>
             <Form.Control
@@ -92,19 +107,32 @@ function AddUpConference() {
                 setSeats(event.target.value);
               }}
               type="number"
-              placeholder="Normal text"
+              placeholder="Seats"
             />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="Date">
-            <Form.Label>Date</Form.Label>
+          <Form.Group className="mb-3" controlId="ResearcherFee">
+            <Form.Label>Researcher Fee</Form.Label>
             <Form.Control
-              name="Date"
-              onChange={(event) => {
-                setDate(event.target.value);
-              }}
-              type="date"
+                name="ResearcherFee"
+                onChange={(event) => {
+                  setResearcherFee(event.target.value);
+                }}
+                type="number"
+                placeholder="Researcher Fees"
             />
           </Form.Group>
+          <Form.Group className="mb-3" controlId="ParticipantsFee">
+            <Form.Label>Partcipants Fee</Form.Label>
+            <Form.Control
+                name="ParticipantsFee"
+                onChange={(event) => {
+                  setParticipantsFee(event.target.value);
+                }}
+                type="number"
+                placeholder="Participants Fee"
+            />
+          </Form.Group>
+
           <Button
             onClick={(event) => {
               sendData(event);

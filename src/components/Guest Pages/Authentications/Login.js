@@ -20,12 +20,15 @@ export default function Login() {
     axios
       .post("http://localhost:8070/auth/login", data)
       .then((response) => {
+
         if (response.data.users.userType === "Admin") {
           localStorage.setItem("user", "Admin");
+
           window.location.href="/"
 
         } else if (response.data.users.userType === "User") {
           localStorage.setItem("user", "user");
+          localStorage.setItem("userid", response.data.users.UserName);
           window.location.href="/"
         }
         else if (response.data.users.userType === "Reviewer") {
@@ -37,8 +40,8 @@ export default function Login() {
             window.location.href="/"
         }else {
           window.location.href="/login"
-        }   
-        
+        }
+
        })
       .catch((err) => {
         swal("Try again", "Incorrect email or password");
