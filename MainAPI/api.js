@@ -27,6 +27,9 @@ router.use("/bill", Payment);
 const TemplateRoute = require("../routes/Template/TemplateRoute");
 router.use("/template", TemplateRoute);
 
+const ContactRoute = require("../routes/Contact/ContactRoute");
+router.use("/contactus", ContactRoute);
+
 //IT19171234===========================================================
 
 const Submission=require("../api/submission.api");

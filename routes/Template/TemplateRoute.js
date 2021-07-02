@@ -46,4 +46,10 @@ router.route("/download/:id").get( async (req,res) => {
     console.log(location);
 })
 
+router.route("/filter/:category").get( async (req,res) => {
+    const uploads = await Category.find({category:req.params.category})
+    res.status(200).json(uploads)
+    console.log(uploads);
+})
+
 module.exports = router;
