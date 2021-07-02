@@ -17,11 +17,11 @@ const speakerSchema = new mongoose.Schema({
         trim:true
     }
     ,
-        conference: {
+conference: {
             type: mongoose.Schema.Types.ObjectId,
             required: false,
             ref: 'conference'
-        }
+}
     }
 )
 module.exports=mongoose.model('speaker',speakerSchema);
