@@ -41,6 +41,9 @@ router.use("/conferences",Conference);
 const Schedule=require("../api/schedule.api");
 router.use("/schedules",Schedule);
 
+const Speakers =require("../api/speakers.api");
+router.use("/speakers",Speakers);
+
 
 
 //=====================================================================================
