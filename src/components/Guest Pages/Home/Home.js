@@ -14,6 +14,7 @@ import {Row} from "react-bootstrap";
 function Home() {
     const [conferences, setConferences] = useState([]);
     const [upconferences, setupConferences] = useState([]);
+    const [schedules, setSchedules] = useState([]);
     useEffect(() => {
         axios
             .get(`http://localhost:8070/api/conferences/main`)
@@ -39,7 +40,19 @@ function Home() {
                 console.log(err);
             });
 
-    },[2]);
+
+        axios
+            .get("http://localhost:8070/api/schedules/")
+            .then((res) => {
+                console.log(res.data);
+                setSchedules(res.data);
+
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+
+    },[3]);
     return (
         <div >
             {conferences.map((conference,index) =>{
@@ -63,7 +76,9 @@ function Home() {
             <h1 className={"sub-titles text-center"} >KEYNOTE SPEAKERS</h1>
             <hr className="divider"/>
                         <br/>
-                        <Speakers/>
+                    <Speakers/>
+
+
                         <br/>
 
             {/*New Line*/}
@@ -72,7 +87,15 @@ function Home() {
             <h1 className={"sub-titles text-center"} >CONFERENCE TIMELINE</h1>
             <hr className="divider"/>
                 <br/>
-                <Time/>
+
+            {schedules.map((schedule,index) =>{
+                return (
+                    <div>
+                    <Time schedule ={schedule}/>
+                    </div>
+                )
+            })}
+
                 <br/>
 
             <h1 className={"sub-titles text-center"} >UPCOMING CONFERENCES</h1>

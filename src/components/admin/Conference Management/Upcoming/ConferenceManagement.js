@@ -47,14 +47,17 @@ function ConferenceManagement() {
         .then((res) => {
           console.log(res);
           setMain(res.data);
-          if(main.length != 0){
+          console.log("Im here");
+          console.log(res.data);
+          if(res.data.length != 0){
               alert("There can't be two main events, Please close current main event!")
           }else{
-              if(main[0]._id != null)
+              if(res.data._id != null)
               {
                   alert("There can be only one main event!");
               }else{
                   makeMain(id);
+                  setActivated(true)
               }
           }
         })
@@ -69,6 +72,7 @@ function makeMain(id){
       .then((res) => {
         console.log(res);
          alert("Successful");
+
       })
       .catch((err) => {
         console.log(err);

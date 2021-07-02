@@ -18,12 +18,12 @@ function EditSchedule(props) {
     event.preventDefault();
 
     const conData = {
-      reg_start_date: start_date,
+        reg_start_date: start_date,
         doc_end_date: doc_date,
-      reg_end_date: end_date,
-      publish_date: publish_date,
-      conference_date: conference_data,
-      conference: props.match.params.id,
+        reg_end_date: end_date,
+        publish_date: publish_date,
+        conference_date: conference_data,
+        conference: props.match.params.id,
 
 
     }
@@ -37,7 +37,7 @@ function EditSchedule(props) {
             icon: "success",
             SuccessMode: true,
           }).then((willDelete) => {
-            history.push("/admin/upcoming-management");
+            history.push("/admin/conference-management");
           });
         })
         .catch((err) => {

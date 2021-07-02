@@ -14,7 +14,7 @@ import FastfoodIcon from '@material-ui/icons/Fastfood';
 import LaptopMacIcon from '@material-ui/icons/LaptopMac';
 import HotelIcon from '@material-ui/icons/Hotel';
 
-function Time() {
+function Time(props) {
 
     const useStyles = makeStyles((theme) => ({
         paper: {
@@ -33,7 +33,7 @@ function Time() {
             <TimelineItem>
                 <TimelineOppositeContent>
                     <Typography variant="body2" color="textSecondary">
-                        START DATE
+                        {props.schedule.reg_start_date}
                     </Typography>
                 </TimelineOppositeContent>
                 <TimelineSeparator>
@@ -57,7 +57,7 @@ function Time() {
             <TimelineItem>
                 <TimelineOppositeContent>
                     <Typography variant="body2" color="textSecondary">
-                        END DATE
+                        {props.schedule.doc_end_date}
                     </Typography>
                 </TimelineOppositeContent>
                 <TimelineSeparator>
@@ -78,7 +78,7 @@ function Time() {
             <TimelineItem>
                 <TimelineOppositeContent>
                     <Typography variant="body2" color="textSecondary">
-                        END DATE
+                        {props.schedule.reg_end_date}
                     </Typography>
                 </TimelineOppositeContent>
                 <TimelineSeparator>
@@ -100,7 +100,7 @@ function Time() {
             <TimelineItem>
                 <TimelineOppositeContent>
                 <Typography variant="body2" color="textSecondary">
-                    DATE
+                    {props.schedule.publish_date}
                 </Typography>
                 </TimelineOppositeContent>
                 <TimelineSeparator>
@@ -121,7 +121,7 @@ function Time() {
             <TimelineItem>
                 <TimelineOppositeContent>
                     <Typography variant="body2" color="textSecondary">
-                        DATE
+                        {props.schedule.conference_date}
                     </Typography>
                 </TimelineOppositeContent>
                 <TimelineSeparator>

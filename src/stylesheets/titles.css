@@ -9,6 +9,7 @@
 .divider{
     border-bottom: 3px solid #150303;
     width:120px;
-    display: block;
     line-height:1em;
+    align-content: center;
+    justify-content: center;
 }

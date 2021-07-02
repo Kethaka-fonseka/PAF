@@ -6,11 +6,11 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import CheckIcon from "@material-ui/icons/Check";
 import PublishIcon from "@material-ui/icons/Publish";
 import axios from "axios";
-
+import CloseIcon from '@material-ui/icons/Close';
 function MainConManagement() {
   const [conferences, setConferences] = useState([]);
   const [deleted,setDeleted] = useState(false)
-  const [activated,setActivated] = useState(false)
+  const [closed,setClosed] = useState(false)
   useEffect(() => {
     axios
         .get(`http://localhost:8070/api/conferences/main`)
@@ -21,7 +21,7 @@ function MainConManagement() {
         .catch((err) => {
           console.log(err);
         });
-  },[]);
+  },[setClosed]);
 
   function deleteConferences(id) {
     console.log(id);
@@ -35,6 +35,21 @@ function MainConManagement() {
           alert(err);
         });
   }
+
+    function CloseConference(id){
+        console.log(id);
+        axios
+            .patch(`http://localhost:8070/api/conferences/${id}`)
+            .then((res) => {
+                console.log(res);
+                alert("Successful");
+
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+
+    }
   function NavigateSchedule(id) {
       window.location =`/admin/add-timeline/${id}`;
   }
@@ -107,8 +122,22 @@ function MainConManagement() {
                   Delete
                 </Button>
               </td>
+                <td>
+                    <Button
+                        className={"pl-0 pr-4"}
+                        variant="contained"
+                        startIcon={<CloseIcon />}
+                        color="secondary"
+                        size="small"
 
-              <td>
+                        onClick={CloseConference.bind(this,conference._id)}
+                    >
+                        Close
+                    </Button>
+                </td>
+
+
+                <td>
                 <Button
                     className={"pl-0 pr-4"}
                     variant="contained"
